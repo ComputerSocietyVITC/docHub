@@ -1,3 +1,7 @@
+---
+slug: "pods"
+---
+
 # Astro Starter Kit: Minimal
 
 ```sh

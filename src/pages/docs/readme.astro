@@ -1,0 +1,9 @@
+---
+import * as markDown from "../readme.md";
+const posts = await Astro.glob("../../content/*.md");
+console.log(posts);
+---
+
+<div>
+  {markDown?.Content?.toString()}
+</div>

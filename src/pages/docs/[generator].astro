@@ -1,0 +1,24 @@
+---
+import type { MarkdownInstance } from "astro";
+import Heading from "../../components/heading.astro";
+
+export async function getStaticPaths() {
+  const array: MarkdownInstance<any>[] = await Astro.glob(
+    "../../content/**/*.md"
+  );
+  return array.map((article: MarkdownInstance<any>) => ({
+    params: {
+      generator: article?.frontmatter.slug,
+    },
+    props: {
+      article: article,
+    },
+  }));
+}
+
+const { generator } = Astro.params;
+const { components, Content } = Astro?.props?.article;
+---
+
+<div>Good generate, {generator}!</div>
+<Content components={{ ...components, h1: Heading }} />

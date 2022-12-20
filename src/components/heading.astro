@@ -1,0 +1,9 @@
+---
+const props = Astro.props;
+---
+
+<h1 class="text-6xl p-4">
+  {props}
+  <span class="text-green-600 mb-2">“</span>
+  <slot />
+</h1>
