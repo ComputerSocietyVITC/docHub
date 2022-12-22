@@ -1,2 +1,4 @@
-exports.createPages = require('./gatsby/create-pages');
-exports.onCreateNode = require('./gatsby/on-create-node');
+import { createPages } from './gatsby/create-pages';
+import { onCreateNode } from './gatsby/on-create-node';
+
+
