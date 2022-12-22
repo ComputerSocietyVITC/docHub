@@ -9,6 +9,7 @@
   "scripts": {
     "start": "npm run develop",
     "develop": "gatsby develop -H 0.0.0.0",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -29,9 +30,6 @@
     "copy-to-clipboard": "^3.3.3",
     "framer-motion": "^7.6.19",
     "gatsby": "^5.2.0",
-    "gatsby-plugin-canonical-urls": "^5.2.0",
-    "gatsby-plugin-gatsby-cloud": "^5.2.0",
-    "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-mdx": "^5.2.0",
     "gatsby-source-wordpress": "^7.2.3",
     "html-react-parser": "^3.0.4",
@@ -96,4 +94,3 @@
     "prettier-plugin-tailwindcss": "^0.2.0"
   }
 }
-
