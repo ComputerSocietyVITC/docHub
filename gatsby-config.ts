@@ -1,29 +1,38 @@
 import type { GatsbyConfig } from "gatsby";
+import remarkGfm from "remark-gfm";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `.`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `IEEE Computer Society VITC Docs`,
+    siteUrl: `https://beta.ieeecsvitc.com`,
   },
-  graphqlTypegen: true,
+  graphqlTypegen: false,
   plugins: [
-    "gatsby-plugin-postcss", 
+    "gatsby-plugin-postcss",
     "gatsby-plugin-sitemap",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        "icon": "src/images/icon.png"
-      }
-    }, 
-  "gatsby-plugin-mdx", {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "pages",
-        "path": "./src/pages/"
+        icon: "src/images/icon.png",
       },
-      __key: "pages"
-    }
-  ]
+    },
+    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+  ],
 };
 
 export default config;
