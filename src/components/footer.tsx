@@ -66,11 +66,11 @@ const Footer = (): JSX.Element => {
               <IconKnowMore link={"https://dev.to/ieeecsvitc"} name={"Blogs"} />
             </section>
           </section>
-          <section className="col-span-2 col-start-8 ">
+          <section className="col-span-2 col-start-8">
             <section className="text-2xl font-bold text-white">
               Contact us
             </section>
-            <section className="flex items-center justify-start gap-2 py-2">
+            <section className="flex flex-col justify-start">
               <IconKnowMore
                 name="GitHub"
                 link={"https://github.com/ComputerSocietyVITC"}
