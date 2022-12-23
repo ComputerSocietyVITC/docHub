@@ -1,15 +1,60 @@
-h1 {
-  font-size: 32px;
-  font-weight: 500;
+h2 {
+  color: white;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: x-large;
+  font-weight: 800;
 }
 
-h2 {
-  font-size: bold;
-  font-size: 32px;
-  color: red;
-  font-weight: 300;
+h2:hover {
+  color: aquamarine;
 }
 
 p {
-  font-size: small;
+  color: white;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-size: medium;
+}
+
+h3 {
+  font-size: large;
+  color: white;
+  font-weight: 600;
+}
+
+ul {
+  font-size: large;
+  margin-left: 32px;
+  list-style: disc;
+  color: white;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+li {
+  font-size: large;
+  margin-left: 32px;
+  list-style: disc;
+  color: white;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+a {
+  color: white;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+em {
+  font-size: medium;
+}
+blockquote {
+  margin-left: 12px;
+}
+
+blockquote:hover {
+  color: aquamarine;
 }
