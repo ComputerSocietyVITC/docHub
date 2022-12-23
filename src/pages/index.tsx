@@ -16,7 +16,11 @@ const IndexPage: React.FC<PageProps> = () => {
           <section className="py-16 gradient-text flex justify-center text-6xl font-Plex text-white font-extrabold">
             Start your learning journey today!
           </section>
-          <img src={Logo} className="h-54 w-54 hover:rotate-45" />
+          <img
+            src={Logo}
+            className="h-54 w-54 hover:rotate-45"
+            alt="Computer Society Logo"
+          />
           <a
             className="bg-primary text-darkshades-passive font-Inter rounded-full w-fit p-4 font-bold text-2xl glowing-shadow capitalize"
             href="/docs"
