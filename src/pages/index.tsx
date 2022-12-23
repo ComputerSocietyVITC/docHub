@@ -33,5 +33,11 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <title>IEEE Computer Society's Documentation website</title>
+  <>
+    <title>IEEE Computer Society's Documentation website</title>
+    <meta
+      name="description"
+      content="This is your one-stop destination for learning everything you need to know about your favourite tech."
+    />
+  </>
 );
