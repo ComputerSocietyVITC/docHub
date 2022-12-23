@@ -52,7 +52,9 @@ const Footer = (): JSX.Element => {
           </section>
           <section className="col-span-2 col-start-4">
             <section className="text-white">
-              <section className="font-extrabold text-2xl capitalize">Know more</section>
+              <section className="font-extrabold text-2xl capitalize">
+                Know more
+              </section>
               <IconKnowMore
                 link={"https://www.ieeecsvitc.com/"}
                 name={"Our Website"}
@@ -69,20 +71,20 @@ const Footer = (): JSX.Element => {
               Contact us
             </section>
             <section className="flex items-center justify-start gap-2 py-2">
-              <SocialMediaIcon
-                icon={<FiGithub />}
+              <IconKnowMore
+                name="GitHub"
                 link={"https://github.com/ComputerSocietyVITC"}
               />
-              <SocialMediaIcon
-                icon={<FaLinkedin />}
+              <IconKnowMore
+                name="Instagram"
                 link={"https://github.com/ComputerSocietyVITC"}
               />
-              <SocialMediaIcon
-                icon={<AiOutlineInstagram />}
+              <IconKnowMore
+                name="LinkedIn"
                 link={"https://github.com/ComputerSocietyVITC"}
               />
-              <SocialMediaIcon
-                icon={<AiOutlineTwitter />}
+              <IconKnowMore
+                name="twitter"
                 link={"https://github.com/ComputerSocietyVITC"}
               />
             </section>
