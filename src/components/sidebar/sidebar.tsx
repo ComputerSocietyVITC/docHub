@@ -22,9 +22,21 @@ const Sidebar = (props: ISidebarProps): JSX.Element => {
 
   let mapMethod = (element: any) => {
     if (element?.frontmatter.title == props?.name) {
-      return <Item text={element?.frontmatter.title} active={true} />;
+      return (
+        <Item
+          text={element?.frontmatter.title}
+          active={true}
+          slug={element?.frontmatter.slug}
+        />
+      );
     } else {
-      return <Item text={element?.frontmatter.title} active={false} />;
+      return (
+        <Item
+          text={element?.frontmatter.title}
+          active={false}
+          slug={element?.frontmatter.slug}
+        />
+      );
     }
   };
 
