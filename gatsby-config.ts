@@ -15,12 +15,7 @@ const config: GatsbyConfig = {
         icon: "src/images/icon.png",
       },
     },
-    {
-      resolve: "gatsby-plugin-mdx",
-      options: {
-        extensions: [".md", ".mdx"],
-      },
-    },
+    "gatsby-plugin-mdx",
     {
       resolve: "gatsby-source-filesystem",
       options: {
