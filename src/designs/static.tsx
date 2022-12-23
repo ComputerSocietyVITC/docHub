@@ -36,3 +36,11 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
 };
 
 export default TemplateComponent;
+
+export const Head = ({ pageContext }: any) => {
+  return (
+    <>
+      <title>{pageContext?.title}</title>
+    </>
+  );
+};
