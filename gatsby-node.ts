@@ -8,7 +8,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const { createPage } = actions;
   const allMdx: { errors?: any; data?: any } = await graphql(`
     query MarkdownQuery {
-      allMdx {
+      allMdx(sort: { frontmatter: { priority: ASC } }) {
         nodes {
           frontmatter {
             slug

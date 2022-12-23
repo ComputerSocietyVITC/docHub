@@ -3,7 +3,7 @@ import { ExoticComponent } from "react";
 import "../../css/headings.css";
 import { Footer } from "../components/footer";
 import Navbar from "../components/navbar";
-import ContentComponent from "../components/sidebar/content";
+import ContentComponent from "../components/content";
 import Sidebar from "../components/sidebar/sidebar";
 import TableContent from "../components/sidebar/tableOfContent";
 import useMDX from "../utils/hooks";

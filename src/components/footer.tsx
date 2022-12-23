@@ -51,8 +51,8 @@ const Footer = (): JSX.Element => {
             />
           </section>
           <section className="col-span-2 col-start-4">
-            <section className="text-2xl font-bold text-white">
-              Know more
+            <section className="text-white">
+              <section className="font-extrabold text-2xl capitalize">Know more</section>
               <IconKnowMore
                 link={"https://www.ieeecsvitc.com/"}
                 name={"Our Website"}

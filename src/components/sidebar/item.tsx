@@ -16,13 +16,13 @@ const Item = (props: ItemProps): JSX.Element => {
       <a href={`/docs${props?.slug}`}>
         <section
           className={clsx({
-            "font-regular my-2 flex items-center justify-start rounded-tl-lg rounded-bl-lg px-2 font-Plex text-lg text-white hover:bg-darkshades-active":
+            "font-regular my-2 flex items-center justify-start rounded-tl-lg gap-2 rounded-bl-lg p-2 hover:bg-darkshades-active":
               true,
             "bg-darkshades-active ": props.active,
           })}
         >
-          {props?.text}
-          <AiFillCaretRight className="text-2xl" />
+          <section className="font-Plex text-white">{props?.text}</section>
+          <AiFillCaretRight className="text-lg" />
         </section>
       </a>
     </>

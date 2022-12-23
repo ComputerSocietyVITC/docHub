@@ -15,3 +15,13 @@
     rgba(255, 255, 255, 0.45) 98.87%
   );
 }
+
+.gradient-text {
+  background: -webkit-linear-gradient(-45deg, #31ce9f 45%, #c5da45 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glowing-shadow:hover {
+  box-shadow: 4px 4px #c5da45;
+}

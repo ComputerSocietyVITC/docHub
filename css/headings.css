@@ -15,7 +15,7 @@ p {
   font-family: "IBM Plex Sans", sans-serif;
   margin-top: 8px;
   margin-bottom: 12px;
-  font-size: medium;
+  font-size: large;
 }
 
 h3 {
@@ -27,7 +27,7 @@ h3 {
 
 ul {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: large;
+  font-size: medium;
   margin-left: 32px;
   list-style: disc;
   color: white;
@@ -37,7 +37,7 @@ ul {
 
 li {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: large;
+  font-size: medium;
   margin-left: 32px;
   list-style: disc;
   color: white;
@@ -47,9 +47,6 @@ li {
 
 a {
   color: white;
-}
-a:hover {
-  text-decoration: underline;
 }
 
 em {
