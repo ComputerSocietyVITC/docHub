@@ -1,0 +1,15 @@
+h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: bold;
+  font-size: 32px;
+  color: red;
+  font-weight: 300;
+}
+
+p {
+  font-size: small;
+}

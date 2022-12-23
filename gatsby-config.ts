@@ -1,5 +1,4 @@
 import type { GatsbyConfig } from "gatsby";
-import remarkGfm from "remark-gfm";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -16,7 +15,12 @@ const config: GatsbyConfig = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".md", ".mdx"],
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
