@@ -11,7 +11,6 @@ import useMDX from "../utils/hooks";
 const TemplateComponent = ({ pageContext }: any): JSX.Element => {
   const data = useMDX(pageContext.body);
   const Content: ExoticComponent = data?.default;
-  console.log(pageContext?.tableOfContents.items);
   return (
     <>
       <Navbar />
