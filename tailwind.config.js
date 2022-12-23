@@ -7,6 +7,7 @@ module.exports = {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
         Monty: ["Montserrat", "sans-serif"],
+        Plex: ["IBM Plex Sans", "sans-serif"],
       },
       colors: {
         primary: "#31CE9F",

@@ -12,7 +12,7 @@ const Item = (props: ItemProps): JSX.Element => {
     <>
       <section
         className={clsx({
-          "rounded-tl-lg hover:bg-darkshades-active px-2 font-regular my-2 rounded-bl-lg font-Monty text-lg text-white":
+          "font-regular my-2 rounded-tl-lg rounded-bl-lg px-2 font-Plex text-lg font-semibold text-white hover:bg-darkshades-active":
             true,
           "bg-darkshades-active": props.active,
         })}

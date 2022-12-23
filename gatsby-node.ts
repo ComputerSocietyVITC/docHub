@@ -13,11 +13,13 @@ export const createPages: GatsbyNode["createPages"] = async ({
           frontmatter {
             slug
             title
+            author
           }
           internal {
             contentFilePath
           }
           body
+          tableOfContents
         }
       }
     }
@@ -29,6 +31,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
       path: `/docs${node.frontmatter.slug}`,
       component: markDownTemplate,
       context: {
+        author: node.frontmatter.author,
+        tableOfContents: node.tableOfContents,
         title: node.frontmatter.title,
         pagePath: node.frontmatter.slug,
         body: node.body,

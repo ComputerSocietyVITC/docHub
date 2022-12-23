@@ -2,16 +2,11 @@ import React from "react";
 import { useStaticQuery, graphql, Page } from "gatsby";
 import Item from "./item";
 
-interface PageQueryType {
-  nodes: {
-    frontmatter: {
-      slug: string;
-      title: string;
-    };
-  };
+interface ISidebarProps {
+  name: string;
 }
 
-const Sidebar = (): JSX.Element => {
+const Sidebar = (props: ISidebarProps): JSX.Element => {
   const query = useStaticQuery(graphql`
     query MarkdownQuery {
       allMdx {
@@ -24,18 +19,21 @@ const Sidebar = (): JSX.Element => {
       }
     }
   `);
-  const data: any[] = query.allMdx.nodes;
-  console.log(typeof data, data);
 
+  let mapMethod = (element: any) => {
+    if (element?.frontmatter.title == props?.name) {
+      return <Item text={element?.frontmatter.title} active={true} />;
+    } else {
+      return <Item text={element?.frontmatter.title} active={false} />;
+    }
+  };
+
+  const data: any[] = query.allMdx.nodes;
   return (
-    <section className="col-start-1 col-span-2 border border-r-[1px] border-b-0 border-l-0 border-t-0 border-textcolors-boundary bg-darkshades-passive py-2">
+    <section className="col-span-2 col-start-1 border border-r-[1px] border-b-0 border-l-0 border-t-0 border-textcolors-boundary bg-darkshades-passive py-2">
       <aside>
         <nav className="relative z-20 mt-5">
-          <ul>
-            {data.map((element: any) => (
-              <Item text={element?.frontmatter.title} active={false} />
-            ))}
-          </ul>
+          <ul>{data.map(mapMethod)}</ul>
         </nav>
       </aside>
     </section>
