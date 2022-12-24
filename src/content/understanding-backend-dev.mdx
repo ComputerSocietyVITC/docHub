@@ -5,7 +5,7 @@ slug: /backend-dev
 priority: 6
 ---
 
-<h2>List of Items:</h2>
+## List of Items:
 
 - Domain specifics
 - Domain use cases
@@ -15,27 +15,27 @@ priority: 6
 - Mistakes you've made in your learning process
 - Reference Projects
 
-<h2>Domain Specifics</h2>
+## Domain Specifics
 
     REST is a way for two computer systems to communicate over HTTP in a similar way to web browsers and servers. In simple words It is a set of rules that allow programs to talk to each other.
 
-<h2>REST API</h2>
+## REST API
 
-<h3>What is Rest API</h3>
+### What is Rest API
 
     An API is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it.
 
-<h3>What is RESTful API?</h3>
+### What is RESTful API?
 
     REST determines how the API looks like. It stands for “Representational State Transfer”. It is a set of rules that developers follow when they create their API. One of these rules states that you should be able to get a piece of data (called a resource) when you link to a specific URL.
 
-<h3>The Anatomy Of A Request</h3>
+### The Anatomy Of A Request
 
-<h4>The Endpoint</h4>
+#### The Endpoint
 
     The endpoint (or route) is the URL you request for. It follows this structure: root-endpoint/? .The root-endpoint is the starting point of the API you're requesting from. The root-endpoint of Github's API is [https://api.github.com](https://api.github.com).
 
-<h4>The Method</h4>
+#### The Method
 
     The method is the type of request you send to the server. You can choose from these five types below:
 
@@ -45,15 +45,15 @@ priority: 6
 - PATCH
 - DELETE
 
-<h3>The Headers</h3>
+### The Headers
 
     Headers are used to provide information to both the client and server. It can be used for many purposes, such as authentication and providing information about the body content. Here is a list of valid headers [HTTP Headers Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
 
-<h4>The Data</h4>
+#### The Data
 
     The data (sometimes called “body” or “message”) contains information you want to be sent to the server.
 
-<h3>HTTP Status Codes And Error Messages</h3>
+### HTTP Status Codes And Error Messages
 
     HTTP status codes let you tell the status of the response quickly.
 
@@ -62,9 +62,9 @@ priority: 6
 3. 400+ means an error that originates from the client has occurred
 4. 500+ means an error that originates from the server has occurred
 
-<h2>Building your API using Node.js (Todo App)</h2>
+## Building your API using Node.js (Todo App)
 
-<h4>Setting up a project</h4>
+#### Setting up a project
 
 To initialize our project
 
@@ -98,7 +98,7 @@ After the package installation is done, your complete package.json file should l
 }
 ```
 
-<h4>Serving our app</h4>
+#### Serving our app
 
 If you check your directory you'd notice a new folder node_modules that's where the dependencies were saved by the npm install command. We need to require them and start up our app. Go ahead and create a server.js file with this content:
 
@@ -117,7 +117,7 @@ app.listen(port, () => {
 
 Now run “node server.js” in cmd and you'd see the log “App up and running on 3000”. Nodemon is responsible for automatically restarting the Node.js application server in development mode. You can use this [link](https://medium.com/front-end-weekly/configuring-nodemon-on-a-node-js-server-da9eed2eeb5) to set it up
 
-<h4>File Structure</h4>
+#### File Structure
 
 ```
 --todoApp
@@ -134,7 +134,7 @@ Now run “node server.js” in cmd and you'd see the log “App up and running 
   ...
 ```
 
-<h4>CRUD Routes</h4>
+#### CRUD Routes
 
 For this api, you'll create four (4) different routes, to handle CREAting a todo item, READing an item, UPDATE and item, and DELETE an item.
 
@@ -156,7 +156,7 @@ module.exports = (app) => {
 }
 ```
 
-<h4>Database Schema</h4>
+#### Database Schema
 
 ```
 // todoModel.js
@@ -184,7 +184,7 @@ let TaskSchema = new Schema({
 module.exports = mongoose.model("Tasks", TaskSchema);
 ```
 
-<h4>Setting up Controllers</h4>
+#### Setting up Controllers
 
 ```
 // api/controllers/todoController.js
@@ -235,7 +235,7 @@ exports.deleteTask = (req, res) => {
 };
 ```
 
-<h4>Coupling everything</h4>
+#### Coupling everything
 
 ```
 // server.js
@@ -260,13 +260,13 @@ app.listen(port);
 console.log("App running on " + port);
 ```
 
-<h2>Software Development and practices</h2>
+## Software Development and practices
 
 - Using MVC (model view controller) is recommended
 - Be easy to understand so that integration is straightforward
 - Be well documented, so that semantic behaviours are understood (not just syntactic)
 
-<h2>Roadmap</h2>
+## Roadmap
 
 - Learn what is REST API and various http routes available
 - Understand about MVC (model view controller) model
@@ -275,7 +275,7 @@ console.log("App running on " + port);
 - Learn how to use postman api testing software
 - After that start to code your rest api
 
-<h2>YouTube and Other Internet Links</h2>
+## YouTube and Other Internet Links
 
 - [What is API?](https://youtu.be/s7wmiS2mSXY)
 - [What is REST API? ](https://ahmetozlu.medium.com/mastering-rest-architecture-rest-api-details-f560e4d93f2)
@@ -284,11 +284,11 @@ console.log("App running on " + port);
 - [Good Practices to follow](https://medium.com/hashmapinc/rest-good-practices-for-api-design-881439796dc9)
 - [Building backend and API using node.js (in depth course) ](https://www.udemy.com/share/1013ho3@8u8oLgBaeO8Uol9hfZo8mT3TTT4GFtB_Hbw6sVp1ZtIDsgoH9uHrIbk4xZxNy6xOQQ==/)
 
-<h2>General Mistakes you've encountered</h2>
+## General Mistakes you've encountered
 
 - I essentially ran into issues when I tried to put all the code in one file, which later on made it difficult to organise and comprehend the code.
 - Always document all your code.
 
-<h2>Reference Project</h2>
+## Reference Project
 
 - Could make a simple shopping api using node, express and mongoose (javascript)
