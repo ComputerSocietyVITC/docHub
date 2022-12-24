@@ -1,11 +1,6 @@
+import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
-import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
-import { FaLinkedin } from "react-icons/fa";
 import { IoOpenOutline } from "react-icons/io5";
-import { FiGithub } from "react-icons/fi";
-
-// @ts-ignore
-import bannerLogo from "../images/banner-logo.png";
 
 interface ISocialMediaInterface {
   icon: JSX.Element;
@@ -30,9 +25,11 @@ const IconKnowMore = (props: KnowMoreProps) => {
     <>
       <section className="flex items-center justify-start gap-2 py-1 text-lg font-light text-white">
         <a href={props?.link}>{props?.name}</a>
-        <IoOpenOutline className="hover:translate-x-2">
-          <a href={props?.link}>{props?.name}</a>
-        </IoOpenOutline>
+        <a href={props?.link}>
+          <IoOpenOutline className="hover:translate-x-2">
+            {props?.name}
+          </IoOpenOutline>
+        </a>
       </section>
     </>
   );
@@ -43,11 +40,14 @@ const Footer = (): JSX.Element => {
     <>
       <footer className="border border-t-[1px] border-b-0 border-r-0 border-l-0 border-textcolors-boundary bg-darkshades-passive py-2 font-Plex">
         <section className="grid grid-cols-10">
-          <section className="col-span-3 col-start-1 flex items-center">
-            <img
-              src={bannerLogo}
+          <section className="col-span-3 col-start-1 flex justify-center items-center">
+            <StaticImage
+              src="../images/banner-logo.png"
               alt="IEEE Computer Society VITC"
-              className="my-8 h-28 px-2"
+              height={120}
+              layout="fixed"
+              width={275}
+              className="px-2"
             />
           </section>
           <section className="col-span-2 col-start-4">
@@ -84,7 +84,7 @@ const Footer = (): JSX.Element => {
                 link={"https://github.com/ComputerSocietyVITC"}
               />
               <IconKnowMore
-                name="twitter"
+                name="Twitter"
                 link={"https://github.com/ComputerSocietyVITC"}
               />
             </section>

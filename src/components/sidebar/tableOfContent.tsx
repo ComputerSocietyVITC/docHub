@@ -8,7 +8,7 @@ interface ITableProps {
 const TableContent = (props: ITableProps): JSX.Element => {
   return (
     <>
-      <section className="col-span-2 col-start-9 font-Plex font-semibold">
+      <section className="col-start-9 col-span-2 px-4 font-Plex font-semibold sm:hidden lg:block">
         <section className="flex flex-col justify-center pl-4 text-lg text-white">
           <section className="flex items-center justify-start gap-2">
             <BiMenuAltLeft className="text-2xl" />

@@ -42,7 +42,7 @@ const Sidebar = (props: ISidebarProps): JSX.Element => {
 
   const data: any[] = query.allMdx.nodes;
   return (
-    <section className="col-span-2 col-start-1 border border-r-[1px] border-b-0 border-l-0 border-t-0 border-textcolors-boundary bg-darkshades-passive py-2">
+    <section className="lg:grid col-span-2 col-start-1 border border-r-[1px] border-b-0 border-l-0 border-t-0 border-textcolors-boundary bg-darkshades-passive py-2 sm:hidden">
       <aside>
         <nav className="relative z-20 mt-5">
           <ul>{data.map(mapMethod)}</ul>
