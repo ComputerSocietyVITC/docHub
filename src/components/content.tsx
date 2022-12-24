@@ -7,7 +7,7 @@ interface IContentProps {
 const ContentComponent = (props: IContentProps): JSX.Element => {
   return (
     <>
-      <section className="grid min-h-screen lg:grid-cols-10 md:grid-cols-1 sm:grid-cols-1 sm:px-2 md:px-2 gap-4 bg-darkshades-passive">
+      <section className="max-w-screen grid min-h-screen gap-4 bg-darkshades-passive sm:grid-cols-1 sm:px-2 md:grid-cols-10 md:px-2 lg:grid-cols-10">
         {props?.children}
       </section>
     </>

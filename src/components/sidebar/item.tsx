@@ -14,7 +14,7 @@ const Item = (props: ItemProps): JSX.Element => {
       <a href={`/docs${props?.slug}`}>
         <section
           className={clsx({
-            "font-regular my-2 rounded-tl-lg gap-2 rounded-bl-lg p-2 hover:bg-darkshades-active":
+            "font-regular my-2 gap-2 rounded-tl-lg rounded-bl-lg p-2 hover:bg-darkshades-active":
               true,
             "bg-darkshades-active ": props.active,
           })}

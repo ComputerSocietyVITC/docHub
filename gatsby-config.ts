@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import rehypeHtml from "rehype";
 
 const config: GatsbyConfig = {
   siteMetadata: {

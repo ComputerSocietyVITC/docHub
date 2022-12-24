@@ -10,8 +10,8 @@ const Navbar = (): JSX.Element => {
   return (
     <>
       <nav className="gradient-navbar flex h-12 items-center justify-between bg-gradient-to-l px-4">
-        <a href="/" className="hover:normal-case">
-          <section className="font-Monty font-bold uppercase text-white">
+        <a href="/" className="hover:underline">
+          <section className="sm:hiden font-Plex font-bold uppercase text-white">
             IEEE Computer Society
           </section>
         </a>

@@ -8,15 +8,20 @@ import Navbar from "../components/navbar";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
-      <section className="h-screen bg-darkshades-passive">
+      <section className="max-w-screen h-screen bg-darkshades-passive">
         <Navbar />
-        <section className="flex flex-col justify-evenly items-center gap-8">
-          <section className="py-16 gradient-text flex justify-center text-6xl font-Plex text-white font-extrabold">
+        <section className="my-2 flex flex-col items-center justify-between">
+          <section className="gradient-text flex justify-center pt-16 pb-8 font-Plex text-6xl font-extrabold text-white">
             Start your learning journey today!
           </section>
-          <StaticImage src="../images/icon.png" alt="Computer Society Logo" />
+          <StaticImage
+            src="../images/icon.png"
+            alt="Computer Society Logo"
+            height={300}
+            width={300}
+          />
           <a
-            className="bg-primary text-darkshades-passive font-Plex rounded-full w-fit p-4 font-regular text-2xl glowing-shadow capitalize"
+            className="glowing-shadow mt-16 w-fit rounded-lg bg-primary p-4 font-Plex text-2xl font-semibold capitalize text-darkshades-passive"
             href="/docs"
           >
             Get started
