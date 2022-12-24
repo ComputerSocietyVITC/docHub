@@ -16,12 +16,12 @@ const ButtonInsideModal = (props: IButtonProps): JSX.Element => {
     <>
       <section className="flex flex-1 justify-between px-2 items-center">
         <section className="flex justify-start items-center">
-          <BiRightArrow className="text-black text-md" />
-          <li className="text-darkshades-passive font-normal list-none text-lg">
+          <BiRightArrow className="text-white" />
+          <li className="text-white font-normal list-none text-lg">
             {props?.name}
           </li>
         </section>
-        <section className="text-black text-md">
+        <section className="text-white text-md">
           <a href={`/docs/${props?.slug}`}>
             <IoOpenOutline />
           </a>
@@ -94,18 +94,18 @@ const Modal: React.FC = (): JSX.Element => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-darkshades-active p-6 text-left align-middle shadow-xl transition-all">
                   <section className="flex flex-1 justify-between items-center">
                     <Dialog.Title
                       as="h3"
-                      className="text-lg font-medium font-Plex leading-6 text-gray-900"
+                      className="text-lg font-medium font-Plex leading-6 text-primary"
                     >
                       List of available docs
                     </Dialog.Title>
                     <section className="">
                       <button
                         type="button"
-                        className="py-2 text-2xl text-darkshades-active"
+                        className="py-2 text-2xl text-white"
                         onClick={closeModal}
                       >
                         <AiFillCloseCircle />

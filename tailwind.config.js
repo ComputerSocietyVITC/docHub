@@ -12,10 +12,10 @@ module.exports = {
       colors: {
         primary: "#31CE9F",
         darkshades: {
-          active: "#3F3F46",
-          // active:"#0f0f0f",
+          active:"#0f0f0f",
           // passive: "#0f0f0f",
-          passive: "#262626",
+          // passive: "#171717",
+          passive:"#202124"
         },
         textcolors: {
           active: "#FFFFFF",

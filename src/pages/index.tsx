@@ -8,7 +8,7 @@ import Navbar from "../components/navbar";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
-      <section className="max-w-screen h-screen bg-darkshades-passive py-2">
+      <section className="max-w-screen h-screen bg-darkshades-passive pb-2">
         <Navbar />
         <section className="my-2 flex flex-1 flex-col items-center justify-between">
           <section className="gradient-text flex justify-center pt-16 pb-8 font-Plex text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">
