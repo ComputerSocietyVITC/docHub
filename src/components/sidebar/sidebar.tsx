@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql, Page } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import Item from "./item";
 
 interface ISidebarProps {

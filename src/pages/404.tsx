@@ -7,26 +7,26 @@ import { StaticImage } from "gatsby-plugin-image";
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <>
-      <section className="h-screen bg-darkshades-passive">
+      <section className="max-w-screen h-screen bg-darkshades-passive py-2">
         <Navbar />
-        <section className="flex flex-col items-center justify-evenly gap-8">
-          <section className="gradient-text flex justify-center py-16 font-Plex text-6xl font-extrabold capitalize text-white">
-            Page Not Found
+        <section className="my-2 flex flex-1 flex-col items-center justify-between">
+          <section className="gradient-text flex justify-center pt-16 pb-8 font-Plex text-3xl font-extrabold text-white md:text-5xl lg:text-6xl">
+            Page Not FOUND!
           </section>
           <StaticImage
-            src={"../images/icon.png"}
-            className="h-54 w-54 hover:rotate-45"
-            alt="Logo"
+            src="../images/icon.png"
+            alt="Computer Society Logo"
+            className="h-64 w-64"
           />
           <a
-            className="glowing-shadow w-fit rounded-full bg-primary p-4 font-Inter text-2xl font-bold capitalize text-darkshades-passive"
-            href="/"
+            className="glowing-shadow mt-16 w-fit rounded-lg bg-primary p-4 font-Plex font-semibold capitalize text-darkshades-passive sm:p-2 md:text-sm lg:text-2xl"
+            href="/docs"
           >
-            Go back home
+            Go Back Home
           </a>
         </section>
+        <Footer />
       </section>
-      <Footer />
     </>
   );
 };

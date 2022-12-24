@@ -1,12 +1,12 @@
 import * as React from "react";
 import { ExoticComponent } from "react";
 import "../../css/headings.css";
+import ContentComponent from "../components/content";
 import { Footer } from "../components/footer";
 import Navbar from "../components/navbar";
-import ContentComponent from "../components/content";
 import Sidebar from "../components/sidebar/sidebar";
 import TableContent from "../components/sidebar/tableOfContent";
-import { useMDX, idGenerator } from "../utils/hooks";
+import { useMDX } from "../utils/hooks";
 
 const TemplateComponent = ({ pageContext }: any): JSX.Element => {
   const data = useMDX(pageContext.body);

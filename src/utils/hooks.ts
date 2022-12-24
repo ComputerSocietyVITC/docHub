@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useState } from "react";
-
 import { evaluate } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import remarkGfm from "remark-gfm";
@@ -35,4 +34,35 @@ let useMDX = (content: any) => {
   return markDown;
 };
 
-export { useMDX, idGenerator };
+const useBodyLockScroll = (isOpen: boolean) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+};
+
+const events = [`mousedown`, `touchstart`];
+
+export default function useClickOutside(refs: any, onClickOutside: any) {
+  const isOutside = (element: any) =>
+    refs.every((ref: any) => !ref.current || !ref.current.contains(element));
+
+  const onClick = (event: any) => {
+    if (isOutside(event.target)) {
+      onClickOutside();
+    }
+  };
+
+  useEffect(() => {
+    events.forEach((event) => document.addEventListener(event, onClick));
+
+    return () => {
+      events.forEach((event) => document.removeEventListener(event, onClick));
+    };
+  });
+}
+
+export { useMDX, idGenerator, useBodyLockScroll, useClickOutside };
