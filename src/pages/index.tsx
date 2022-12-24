@@ -17,8 +17,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <StaticImage
             src="../images/icon.png"
             alt="Computer Society Logo"
-            height={300}
-            width={300}
+            className="h-64 w-64"
           />
           <a
             className="glowing-shadow mt-16 w-fit rounded-lg bg-primary p-4 font-Plex text-2xl font-semibold capitalize text-darkshades-passive"
@@ -36,11 +35,11 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <>
+  <html lang="en">
     <title>IEEE Computer Society's Documentation website</title>
     <meta
       name="description"
       content="This is your one-stop destination for learning everything you need to know about your favourite tech."
     />
-  </>
+  </html>
 );

@@ -2,9 +2,7 @@ import { HeadFC, PageProps } from "gatsby";
 import * as React from "react";
 import { Footer } from "../components/footer";
 import Navbar from "../components/navbar";
-
-// @ts-ignore
-import Logo from "../images/icon.png";
+import { StaticImage } from "gatsby-plugin-image";
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
@@ -15,7 +13,11 @@ const NotFoundPage: React.FC<PageProps> = () => {
           <section className="gradient-text flex justify-center py-16 font-Plex text-6xl font-extrabold capitalize text-white">
             Page Not Found
           </section>
-          <img src={Logo} className="h-54 w-54 hover:rotate-45" alt="Logo" />
+          <StaticImage
+            src={"../images/icon.png"}
+            className="h-54 w-54 hover:rotate-45"
+            alt="Logo"
+          />
           <a
             className="glowing-shadow w-fit rounded-full bg-primary p-4 font-Inter text-2xl font-bold capitalize text-darkshades-passive"
             href="/"

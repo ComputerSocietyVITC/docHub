@@ -1,10 +1,9 @@
 import * as React from "react";
 import "../../css/gradients.css";
 import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-// @ts-ignore
-import image from "../images/icon.png";
 import "../../css/gradients.css";
 import { SocialMediaIcon } from "./footer";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Navbar = (): JSX.Element => {
   return (
@@ -16,7 +15,11 @@ const Navbar = (): JSX.Element => {
           </section>
         </a>
 
-        <img src={image} alt="Computer Society Logo" className="h-12 w-12" />
+        <StaticImage
+          src={"../images/icon.png"}
+          alt="Computer Society Logo"
+          className="h-12 w-12"
+        />
         <section className="flex gap-2">
           <SocialMediaIcon
             icon={<AiFillGithub />}
