@@ -3,10 +3,6 @@ module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx, md. mdx}"],
   theme: {
-    screens: {
-      md: { max: "767px" },
-      sm: { max: "639px" },
-    },
     extend: {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],

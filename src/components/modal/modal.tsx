@@ -1,8 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import { Fragment, useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { AiFillCloseCircle, AiOutlineMenu } from "react-icons/ai";
+import { AiFillCaretDown, AiFillCloseCircle } from "react-icons/ai";
 import { BiRightArrow } from "react-icons/bi";
 import { IoOpenOutline } from "react-icons/io5";
 
@@ -65,7 +65,7 @@ const Modal: React.FC = (): JSX.Element => {
           onClick={openModal}
           className="m-2 px-2 py-1 text-2xl rounded font-medium text-white"
         >
-          <AiOutlineMenu />
+          <AiFillCaretDown />
         </button>
       </section>
 
