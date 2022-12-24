@@ -9,7 +9,7 @@ interface ISidebarProps {
 const Sidebar = (props: ISidebarProps): JSX.Element => {
   const query = useStaticQuery(graphql`
     query MarkdownQuery {
-      allMdx {
+      allMdx(sort: { frontmatter: { priority: ASC } }) {
         nodes {
           frontmatter {
             slug

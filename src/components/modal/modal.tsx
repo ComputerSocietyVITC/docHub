@@ -22,7 +22,7 @@ const ButtonInsideModal = (props: IButtonProps): JSX.Element => {
           </li>
         </section>
         <section className="text-black text-md">
-          <a href={props?.slug}>
+          <a href={`/docs/${props?.slug}`}>
             <IoOpenOutline />
           </a>
         </section>
@@ -34,7 +34,7 @@ const ButtonInsideModal = (props: IButtonProps): JSX.Element => {
 const Modal: React.FC = (): JSX.Element => {
   const query = useStaticQuery(graphql`
     query MarkdownQuery {
-      allMdx {
+      allMdx(sort: { frontmatter: { priority: ASC } }) {
         nodes {
           frontmatter {
             slug

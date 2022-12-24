@@ -47,7 +47,7 @@ const Footer = (): JSX.Element => {
               height={120}
               layout="fixed"
               width={275}
-              className="px-2 md:px-4 "
+              className="pl-4 md:px-4 "
             />
           </section>
           <section className="flex justify-between px-2 sm:col-start-1 sm:py-4 md:col-span-2 md:col-start-3 lg:col-span-2 lg:col-start-4">
@@ -69,10 +69,10 @@ const Footer = (): JSX.Element => {
               <StaticImage
                 src="../images/banner-logo.png"
                 alt="IEEE Computer Society VITC"
-                height={96}
+                height={78}
                 layout="fixed"
-                width={220}
-                className="px-2 md:px-4 "
+                width={176}
+                className="px-2 md:px-4"
               />
             </section>
           </section>
@@ -102,7 +102,7 @@ const Footer = (): JSX.Element => {
             </section>
           </section>
         </section>
-        <section className="sm:text-md col-span-full flex justify-center font-Monty text-lg font-light text-white">
+        <section className="sm:text-md col-span-full flex justify-center font-Monty text-lg font-light text-white px-2">
           IEEE Computer Society VIT Chennai © {new Date().getFullYear()}
         </section>
       </footer>
