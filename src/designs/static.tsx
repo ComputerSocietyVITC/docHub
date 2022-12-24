@@ -3,6 +3,7 @@ import { ExoticComponent } from "react";
 import "../../css/headings.css";
 import ContentComponent from "../components/content";
 import { Footer } from "../components/footer";
+import Modal from "../components/modal/modal";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar/sidebar";
 import TableContent from "../components/sidebar/tableOfContent";
@@ -14,6 +15,12 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
   return (
     <>
       <Navbar />
+      <section className="lg:hidden md:hidden flex flex-1 justify-between bg-darkshades-active w-full h-8 pl-10">
+        <section className="text-white font-black text-lg">
+          In this website
+        </section>
+        <Modal />
+      </section>
       <ContentComponent>
         <>
           <Sidebar name={pageContext?.title} />

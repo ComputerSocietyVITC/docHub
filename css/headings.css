@@ -1,5 +1,4 @@
 h2 {
-  color: white;
   margin-top: 16px;
   margin-bottom: 16px;
   font-size: x-large;
@@ -11,7 +10,6 @@ h2:hover {
 }
 
 p {
-  color: white;
   font-family: "IBM Plex Sans", sans-serif;
   margin-top: 8px;
   margin-bottom: 12px;
@@ -21,7 +19,6 @@ p {
 h3 {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: x-large;
-  color: white;
   font-weight: 600;
 }
 
@@ -30,7 +27,6 @@ ul {
   font-size: medium;
   margin-left: 32px;
   list-style: disc;
-  color: white;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -40,13 +36,8 @@ li {
   font-size: large;
   margin-left: 32px;
   list-style: disc;
-  color: white;
   margin-top: 8px;
   margin-bottom: 8px;
-}
-
-a {
-  color: white;
 }
 
 em {

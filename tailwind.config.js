@@ -3,6 +3,11 @@ module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx, md. mdx}"],
   theme: {
+    screens: {
+      lg: { min: "1023px" },
+      md: { max: "767px" },
+      sm: { max: "639px" },
+    },
     extend: {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
@@ -13,6 +18,8 @@ module.exports = {
         primary: "#31CE9F",
         darkshades: {
           active: "#3F3F46",
+          // active:"#0f0f0f",
+          // passive: "#0f0f0f",
           passive: "#262626",
         },
         textcolors: {

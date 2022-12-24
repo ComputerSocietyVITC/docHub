@@ -5,6 +5,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `IEEE Computer Society VITC Docs`,
     siteUrl: `https://beta.ieeecsvitc.com`,
+    icon: 'src/images/icon.png'
   },
   graphqlTypegen: false,
   plugins: [
