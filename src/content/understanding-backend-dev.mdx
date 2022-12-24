@@ -1,0 +1,294 @@
+---
+author: Emmanuel Allan M J
+title: Understanding back-end devlopment
+slug: /backend-dev
+priority: 6
+---
+
+<h2>List of Items:</h2>
+
+- Domain specifics
+- Domain use cases
+- Software Development and practices behind
+- Basic roadmap
+- Course Recommendations
+- Mistakes you've made in your learning process
+- Reference Projects
+
+<h2>Domain Specifics</h2>
+
+    REST is a way for two computer systems to communicate over HTTP in a similar way to web browsers and servers. In simple words It is a set of rules that allow programs to talk to each other.
+
+<h2>REST API</h2>
+
+<h3>What is Rest API</h3>
+
+    An API is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it.
+
+<h3>What is RESTful API?</h3>
+
+    REST determines how the API looks like. It stands for “Representational State Transfer”. It is a set of rules that developers follow when they create their API. One of these rules states that you should be able to get a piece of data (called a resource) when you link to a specific URL.
+
+<h3>The Anatomy Of A Request</h3>
+
+<h4>The Endpoint</h4>
+
+    The endpoint (or route) is the URL you request for. It follows this structure: root-endpoint/? .The root-endpoint is the starting point of the API you're requesting from. The root-endpoint of Github's API is [https://api.github.com](https://api.github.com).
+
+<h4>The Method</h4>
+
+    The method is the type of request you send to the server. You can choose from these five types below:
+
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
+
+<h3>The Headers</h3>
+
+    Headers are used to provide information to both the client and server. It can be used for many purposes, such as authentication and providing information about the body content. Here is a list of valid headers [HTTP Headers Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
+
+<h4>The Data</h4>
+
+    The data (sometimes called “body” or “message”) contains information you want to be sent to the server.
+
+<h3>HTTP Status Codes And Error Messages</h3>
+
+    HTTP status codes let you tell the status of the response quickly.
+
+1. 200+ means the request has succeeded.
+2. 300+ means the request is redirected to another URL
+3. 400+ means an error that originates from the client has occurred
+4. 500+ means an error that originates from the server has occurred
+
+<h2>Building your API using Node.js (Todo App)</h2>
+
+<h4>Setting up a project</h4>
+
+To initialize our project
+
+```sh
+npm init
+```
+
+Download required dependencies
+
+```sh
+npm install --save express body-parser mongoose
+npm install --save-dev nodemon
+```
+
+After the package installation is done, your complete package.json file should look like this:
+
+```json
+{
+  "name": "todoApp",
+  "version": "0.0.0",
+  "description": "Building a REST API with Node.js",
+  "author": "Emmanuel Allan M J",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
+```
+
+<h4>Serving our app</h4>
+
+If you check your directory you'd notice a new folder node_modules that's where the dependencies were saved by the npm install command. We need to require them and start up our app. Go ahead and create a server.js file with this content:
+
+```
+// Importing libraries
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+// get our server running
+app.listen(port, () => {
+ console.log("App up and running on" + port);
+});
+```
+
+Now run “node server.js” in cmd and you'd see the log “App up and running on 3000”. Nodemon is responsible for automatically restarting the Node.js application server in development mode. You can use this [link](https://medium.com/front-end-weekly/configuring-nodemon-on-a-node-js-server-da9eed2eeb5) to set it up
+
+<h4>File Structure</h4>
+
+```
+--todoApp
+  - api
+    - models
+      - todoModel.js
+    - controllers
+      - todoController.js
+    - routes
+      - todoRoutes.js
+  - node_modules
+  - server.js
+  - package.json
+  ...
+```
+
+<h4>CRUD Routes</h4>
+
+For this api, you'll create four (4) different routes, to handle CREAting a todo item, READing an item, UPDATE and item, and DELETE an item.
+
+```
+// api/models/todoRoutes.js
+
+module.exports = (app) => {
+  let todoList = require('../controllers/todoController');
+  // our Routes
+  app.route('/tasks')
+    .get(todoList.getTasks)
+    .post(todoList.createTask);
+
+
+  app.route('/tasks/:taskId')
+    .get(todoList.readTask)
+    .put(todoList.updateTask)
+    .delete(todoList.deleteTask);
+}
+```
+
+<h4>Database Schema</h4>
+
+```
+// todoModel.js
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+let TaskSchema = new Schema({
+ name: {
+  type: String,
+  Required: "Task label is required!",
+ },
+ Created_date: {
+  type: Date,
+  default: Date.now,
+ },
+ status: {
+  type: [
+   {
+    type: String,
+    enum: ["completed", "ongoing", "pending"],
+   },
+  ],
+  default: ["pending"],
+ },
+});
+module.exports = mongoose.model("Tasks", TaskSchema);
+```
+
+<h4>Setting up Controllers</h4>
+
+```
+// api/controllers/todoController.js
+const mongoose = require("mongoose");
+const Task = mongoose.model("Tasks");
+// get all tasks
+exports.getTasks = (req, res) => {
+ Task.find({}, (err, task) => {
+  if (err) res.send(err);
+
+  res.json(task);
+ });
+};
+// create a task
+exports.createTask = (req, res) => {
+ let newTask = new Task(req.body);
+ newTask.save((err, task) => {
+  if (err) res.send(err);
+
+  res.json(task);
+ });
+};
+// read a single task
+exports.readTask = (req, res) => {
+ Task.findById(req.params.id, (err, task) => {
+  if (err) res.send(err);
+  res.json(task);
+ });
+};
+// update a particular task
+exports.updateTask = (req, res) => {
+ Task.findOneAndUpdate(req.params.id, req.body, { new: true }, (err, task) => {
+  if (err) res.send(err);
+  res.json(task);
+ });
+};
+// delete a single task
+exports.deleteTask = (req, res) => {
+ Task.remove(
+  {
+   _id: req.params.id,
+  },
+  (err, task) => {
+   if (err) res.send(err);
+   res.json({ message: "Task deleted!!" });
+  }
+ );
+};
+```
+
+<h4>Coupling everything</h4>
+
+```
+// server.js
+const express = require("express"); // express framework
+const app = express();
+const port = process.env.PORT || 3000;
+const mongoose = require("mongoose");
+const Task = require("./api/models/todoListModel");
+const bodyParser = require("body-parser");
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:2701/todoApp"); // connect to MongoDB
+// handle incoming requests
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+// middleware to handle wrong routes
+app.use((req, res) => {
+ res.status(404).send({ url: req.originalUrl + "not found" });
+});
+let routes = require("./api/routes/todoListRoute");
+routes(app); // register our routes
+app.listen(port);
+console.log("App running on " + port);
+```
+
+<h2>Software Development and practices</h2>
+
+- Using MVC (model view controller) is recommended
+- Be easy to understand so that integration is straightforward
+- Be well documented, so that semantic behaviours are understood (not just syntactic)
+
+<h2>Roadmap</h2>
+
+- Learn what is REST API and various http routes available
+- Understand about MVC (model view controller) model
+- Choose one framework and have basic knowledge(node for js, django for python etc)
+- Learn how to use either sql or nosql database
+- Learn how to use postman api testing software
+- After that start to code your rest api
+
+<h2>YouTube and Other Internet Links</h2>
+
+- [What is API?](https://youtu.be/s7wmiS2mSXY)
+- [What is REST API? ](https://ahmetozlu.medium.com/mastering-rest-architecture-rest-api-details-f560e4d93f2)
+- [Using postman for API testing ](https://medium.com/assertqualityassurance/rest-api-test-automation-with-postman-jenkins-1-of-3-860edf3c2a45)
+- [Building a simple REST Api using node ](https://medium.com/ph-devconnect/build-your-first-restful-api-with-node-js-e701b53d1f41)
+- [Good Practices to follow](https://medium.com/hashmapinc/rest-good-practices-for-api-design-881439796dc9)
+- [Building backend and API using node.js (in depth course) ](https://www.udemy.com/share/1013ho3@8u8oLgBaeO8Uol9hfZo8mT3TTT4GFtB_Hbw6sVp1ZtIDsgoH9uHrIbk4xZxNy6xOQQ==/)
+
+<h2>General Mistakes you've encountered</h2>
+
+- I essentially ran into issues when I tried to put all the code in one file, which later on made it difficult to organise and comprehend the code.
+- Always document all your code.
+
+<h2>Reference Project</h2>
+
+- Could make a simple shopping api using node, express and mongoose (javascript)

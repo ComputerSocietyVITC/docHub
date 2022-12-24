@@ -1,0 +1,253 @@
+---
+title: Introduction to Neural networks
+author: Likhit Varadhan Reddy
+slug: /neural-networks
+priority: 7
+---
+
+# Domain Specifics
+
+Deep Neural Networks (DNL) is a subfield of machine learning (ML) in artificial intelligence (AI) that deals with algorithms inspired from the biological structure and functioning of a brain to aid machines with intelligence.
+
+Machine learning can be defined as the process of inducing intelligence into a system or machine without explicit programming.So, where does DNL stand within this context? It happens that while ML works very well for a variety of problems, it fails to excel in some specific cases that seem to be very easy for humans: say, classifying an image as a cat or dog, distinguishing an audio clip as of a male or female voice, and so on. ML performs poorly with image and other unstructured data types. Upon researching the reasons for this poor performance, an inspiration led to the idea of mimicking the human brain’s biological process, which is composed of billions of neurons connected and orchestrated to adapt to learning new things.
+
+# Use cases
+
+Neural networks are often used for statistical analysis and data modelling, in which
+
+their role is perceived as an alternative to standard nonlinear regression or cluster
+
+analysis techniques . Thus, they are typically used in
+
+problems that may be couched in terms of classification, or forecasting. Some
+
+examples include image and speech recognition, textual character recognition, and
+
+domains of human expertise such as medical diagnosis, geological survey for oil,
+
+and financial market indicator prediction. This type of problem also falls within the
+
+domain of classical artificial intelligence (AI) so that engineers and computer
+
+scientists see neural nets as offering a style of parallel distributed computing,
+
+thereby providing an alternative to the conventional algorithmic techniques that
+
+have dominated in machine intelligence
+
+# Software Development and practices
+
+- Python([https://www.python.org/](https://www.python.org/))
+- Numpy([NumPy](https://numpy.org/))
+- Pandas([https://pandas.pydata.org/](https://pandas.pydata.org/))
+- Matplotlib([Matplotlib — Visualization with Python](https://matplotlib.org/))
+- Seaborn([seaborn: statistical data visualization — seaborn 0.12.1 documentation (pydata.org)](https://seaborn.pydata.org/))
+- Tensorflow([https://www.tensorflow.org/](https://www.tensorflow.org/))
+- Keras([https://keras.io/](https://keras.io/))
+- If one has a strong enough pc(with at least 16 GB RAM, M.2 SSD, RTX2080 super , i7 11th gen or ryzen 7 5000 series) they can do it on jupyter([https://jupyter.org/](https://jupyter.org/)) else use keggle([https://www.kaggle.com/](https://www.kaggle.com/))
+
+# Roadmap
+
+- **PYTHON**
+- Basics
+- Oops
+- Numpy, Pandas
+- Matplotlib,Seaborn
+- **NEURAL NETWORKS:**
+
+  1.Neurons
+
+  2.Activation Function-Sigmoid Activation Function,ReLU Activation Function
+
+       Layers-Core Layers,Dense Layer,Dropout Layer,Embedding layers ,Convolutional
+
+
+       layers,Pooling layers ,Merge layers ,Recurrent layers ,Normalization layers and many
+
+
+       more
+
+  3.The Loss Function
+
+  4.Optimizers-Adagrad,Adadelta, RMSProp, Adamax, Nadam
+
+  5.Metrics-Binary Accuracy ,Categorical Accuracy,Sparse Categorical Accuracy
+
+  6.Model Training
+
+  7.Model Evaluation
+
+# YouTube, Other Internet Links and other references:
+
+- [https://www.youtube.com/watch?v=H1elmMBnykA](https://www.youtube.com/watch?v=H1elmMBnykA) [Python by Derek Banas]
+- [https://www.youtube.com/watch?v=LOQHYn7BLAg](https://www.youtube.com/watch?v=LOQHYn7BLAg) [Pandas, Numpy and Ploty by Derek Banas]
+- [https://www.youtube.com/watch?v=wB9C0Mz9gSo](https://www.youtube.com/watch?v=wB9C0Mz9gSo) [Matplotlib by Derek Banas]
+- [https://www.youtube.com/watch?v=6GUZXDef2U0](https://www.youtube.com/watch?v=6GUZXDef2U0) [Seaborn by Derek Banas]
+- [https://www.youtube.com/watch?v=Y\_\_gyApx_7c](https://www.youtube.com/watch?v=Y__gyApx_7c) [Tensorflow by Derek Banas]
+- [https://www.geeksforgeeks.org/introduction-to-artificial-neutral-networks/?ref=lbp](https://www.geeksforgeeks.org/introduction-to-artificial-neutral-networks/?ref=lbp)
+- **BOOKS:**
+
+  Learn Keras for Deep Neural Networks -By Jojo Moolayil [for clear understanding of minute but valuable concepts]
+
+  Convolutional Neural Networks in Python -By:The LazyProgrammer ([http://lazyprogrammer.me](http://lazyprogrammer.me))
+
+  [for some advance projects]
+
+# General Mistakes
+
+- Usage of incorrect learning rates which causes a lot of problems. It sometimes may make the training impossible.
+- Models used to be too wide but not deep enough.
+- Large numbers of epochs or iterations or using a deeper neural network do not guarantee good validation accuracy.
+
+# Reference Project
+
+**BASIC PROJECT(getting it all together):**
+
+```
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense, Activation
+# Generate dummy training dataset
+np.random.seed(2018)
+x_train = np.random.random((6000,10))
+y_train = np.random.randint(2, size=(6000, 1))
+# Generate dummy validation dataset
+x_val = np.random.random((2000,10))
+y_val = np.random.randint(2, size=(2000, 1))
+# Generate dummy test dataset
+x_test = np.random.random((2000,10))
+y_test = np.random.randint(2, size=(2000, 1))
+#Define the model architecture
+model = Sequential()
+model.add(Dense(64, input_dim=10,activation = "relu")) #Layer 1
+model.add(Dense(32,activation = "relu")) #Layer 2
+model.add(Dense(16,activation = "relu")) #Layer 3
+model.add(Dense(8,activation = "relu")) #Layer 4
+model.add(Dense(4,activation = "relu")) #Layer 5
+model.add(Dense(1,activation = "sigmoid")) #Output
+Layer
+#Configure the model
+model.compile(optimizer='Adam',loss='binary_crossentropy',metri
+cs=['accuracy'])
+#Train the model
+model.fit(x_train, y_train, batch_size=64, epochs=3,
+validation_data=(x_val,y_val))
+```
+
+**MNIST PROJECT:**
+
+```
+import tensorflow
+from keras.layers import Dense, Dropout, Flatten
+from keras.layers import Activation
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.utils import to_categorical
+import numpy as np
+
+mnist = tensorflow.keras.datasets.mnist
+
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+
+x_train, y_train, x_test, y_test = x_train.flatten(), y_train.flatten(), x_test.flatten(), y_test.flatten()
+x_train, x_test = x_train.reshape(60000, 784), x_test.reshape(10000, 784)
+
+x_train = x_train/255
+x_test = x_test/255
+
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+n_inputs = 784
+n_epochs = 4
+batch_size = 1
+n_classes = 10
+
+import matplotlib.pyplot as plt
+
+plt.imshow(x_train[0].reshape(28, 28), cmap=plt.cm.binary)
+plt.show()
+print(x_train[0])
+```
+
+Output of code above- This is our dataset
+
+```
+# build a sequential model
+model = Sequential()
+# the first layer has to specify the dimensions of the input vector
+model.add(Dense(units=128, activation='relu', input_shape=(784,)))
+# add dropout layer for preventing overfitting
+model.add(Dropout(0.5))
+model.add(Dense(units=128, activation='relu'))
+model.add(Dropout(0.5))
+# output layer can only have the neurons equal to the number of outputs
+model.add(Dense(units=n_classes, activation='softmax'))
+
+# print the summary of our model
+model.summary()
+# compile the model
+model.compile(loss='categorical_crossentropy',optimizer=SGD(),metrics=['accuracy'])
+# train the model
+model.fit(x_train, y_train, batch_size=1, epochs=n_epochs)
+```
+
+**Output of the above code in which we fitted the data: **
+
+Model: "sequential_3"
+
+---
+
+Layer (type) Output Shape Param #
+
+=================================================================
+
+dense_2 (Dense) (None, 128) 100480
+
+dropout (Dropout) (None, 128) 0
+
+dense_3 (Dense) (None, 128) 16512
+
+dropout_1 (Dropout) (None, 128) 0
+
+dense_4 (Dense) (None, 10) 1290
+
+=================================================================
+
+Total params: 118,282
+
+Trainable params: 118,282
+
+Non-trainable params: 0
+
+---
+
+Epoch 1/4
+
+60000/60000 [==============================] - 95s 2ms/step - loss: 0.5560 - accuracy: 0.8327
+
+Epoch 2/4
+
+60000/60000 [==============================] - 97s 2ms/step - loss: 0.3788 - accuracy: 0.8929
+
+Epoch 3/4
+
+60000/60000 [==============================] - 96s 2ms/step - loss: 0.3441 - accuracy: 0.9040
+
+Epoch 4/4
+
+60000/60000 [==============================] - 101s 2ms/step - loss: 0.3207 - accuracy: 0.9103
+
+```
+# evaluate the model and print the accuracy score
+scores = model.evaluate(x_test, y_test)
+print('\n loss:', scores[0])
+print('\n accuracy:', scores[1])
+```
+
+**313/313 [==============================] - 1s 2ms/step - loss: 0.1625 - accuracy: 0.9534**
+
+**Loss: 0.16250382363796234**
+
+**Accuracy: 0.9534000158309937**
+
+Executing and understanding the above code on kaggle or collab will give the basic idea
