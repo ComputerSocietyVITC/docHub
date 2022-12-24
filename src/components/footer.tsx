@@ -50,7 +50,7 @@ const Footer = (): JSX.Element => {
               className="pl-4 md:px-4 "
             />
           </section>
-          <section className="flex justify-between px-2 sm:col-start-1 sm:py-4 md:col-span-2 md:col-start-3 lg:col-span-2 lg:col-start-4">
+          <section className="flex justify-between px-2 sm:col-start-1 sm:py-4 md:col-span-2 md:col-start-3 lg:col-span-2 lg:col-start-4 mt-4">
             <section className="text-white">
               <section className="text-2xl font-extrabold capitalize">
                 Know more
@@ -76,7 +76,7 @@ const Footer = (): JSX.Element => {
               />
             </section>
           </section>
-          <section className="px-2 sm:col-start-1 sm:flex sm:justify-start sm:py-4 md:col-span-2 md:col-start-5 lg:col-span-2 lg:col-start-8">
+          <section className="px-2 sm:col-start-1 sm:flex sm:justify-start sm:py-4 md:col-span-2 md:col-start-5 lg:col-span-2 lg:col-start-8 mt-4">
             <section className="text-2xl font-bold text-white">
               Contact us
               <section className="flex flex-col justify-start">
