@@ -10,7 +10,7 @@ const TableContent = (props: ITableProps): JSX.Element => {
   return (
     <>
       <section className="hidden md:grid lg:grid col-start-9 col-span-2 lg:px-4 md:px-0 sm:px-0 font-Plex font-semibold ">
-        <section className="flex flex-col justify-center pl-4 text-lg text-white">
+        <section className="flex flex-col justify-start pl-4 text-lg text-white">
           <section className="flex items-center justify-start gap-2">
             <BiMenuAltLeft className="lg:text-2xl md:text-xl sm:text-lg" />
             In this page
