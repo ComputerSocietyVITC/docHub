@@ -86,15 +86,17 @@ const Footer = (): JSX.Element => {
                 />
                 <IconKnowMore
                   name="Instagram"
-                  link={"https://github.com/ComputerSocietyVITC"}
+                  link={"https://instagram.com/comsoc.vitcc"}
                 />
                 <IconKnowMore
                   name="LinkedIn"
-                  link={"https://github.com/ComputerSocietyVITC"}
+                  link={
+                    "https://www.linkedin.com/company/ieee-computer-society-vit-chennai/mycompany/"
+                  }
                 />
                 <IconKnowMore
                   name="Twitter"
-                  link={"https://github.com/ComputerSocietyVITC"}
+                  link={"https://twitter.com/ieeecsvitc"}
                 />
               </section>
             </section>
