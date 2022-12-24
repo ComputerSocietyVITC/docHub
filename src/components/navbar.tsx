@@ -15,11 +15,13 @@ const Navbar = (): JSX.Element => {
           </section>
         </a>
 
-        <StaticImage
-          src={"../images/icon.png"}
-          alt="Computer Society Logo"
-          className="h-12 w-12"
-        />
+        <section className="hidden md:block lg:block">
+          <StaticImage
+            src={"../images/icon.png"}
+            alt="Computer Society Logo"
+            className="h-12 w-12"
+          />
+        </section>
         <section className="flex gap-2">
           <SocialMediaIcon
             icon={<AiFillGithub />}
