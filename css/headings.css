@@ -60,3 +60,9 @@ blockquote {
 blockquote:hover {
   color: aquamarine;
 }
+
+code {
+  font-family: "Roboto Mono", monospace;
+  color: white;
+  font-size: small;
+}
