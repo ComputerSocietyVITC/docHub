@@ -1,5 +1,4 @@
 import type { GatsbyConfig } from "gatsby";
-import rehypeHtml from "rehype";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -7,6 +6,10 @@ const config: GatsbyConfig = {
     siteUrl: `https://beta.ieeecsvitc.com`,
     icon: "/src/images/icon.png",
     image: "/src/images/banner-logo.png",
+    icon_options: {
+      purpose: "any maskable",
+    },
+    legacy: false,
     description:
       "This is your one-stop destination for learning everything you need to know about your favourite tech.",
   },
@@ -29,12 +32,6 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-mdx",
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/docs/`, `/`],
-      },
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
