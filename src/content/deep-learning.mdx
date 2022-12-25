@@ -1,0 +1,330 @@
+---
+slug: /path-to-deep-learning
+author: Srinitish Srinivasan
+title: What is deep learning ?
+priority: 8
+---
+
+## Domain Specifics
+
+## Machine Learning
+
+- Machine Learning refers to a technique or a process of developing models that enables a machine to learn and adapt to a specified task.
+- For instance, We may develop a model to recognize the handwriting patterns of text, detect objects, figure out growth trends etc
+
+### Deep Learning
+
+- Deep learning is a Neural Network implementation of Machine Learning.
+- Simply put, it is a way of teaching the machine how to act and think like the human mind.
+- When large amount of data is provided to it, it learns the trends of the data provided using a network of artificial neurons and generates an output(for example- a prediction)
+
+## Use Cases
+
+The field of Machine Learning unlocks a whole new perspective to an individuals and businesses ranging from modelling housing prices to making financial decisions. AI has various sub-fields such as computer vision, natural language processing, speech processing, image generation etc
+
+## Learning Path
+
+### Scenario
+
+Lets take the scenario of a company A having an office B filled with ML scientists and developers. The computers in A have been prone to malware attacks in the past 5 years. A submits a report to B with malware data of the past 5 years with both positive and negative cases which includes features such as hardware and software specs. B has now been tasked with making a suitable model that would predict if a given computer X would be affected by malware or not.
+
+Alright sounds cool doesn't it? Throughout this learning path, we would be brainstorming ways to solve the problem given in the above scenario.
+
+### Note
+
+- After covering each material in this learning path, you would be able to design possible solutions to the above problem statement in addition to working on other projects.
+- The learning path lays the platform to further explore deep learning and related sub use cases such as natural language processing, computer vision etc
+
+## Section 1
+
+### Mathematical Prerequisites for any AI practitioner
+
+Alright I know a lot of people reading this don't really like math which is absolutely fine, a basic knowledge of Statistics and Linear Algebra is all that is needed to kickstart your AI journey.
+
+**Why Mathematics?**
+
+Most algorithms that we know today have an underlying mathematical concept behind them. Knowing the basic concept of “why it works?” will enable you to tackle any roadblock you face while developing your neural network.
+
+- Statistics will open a whole new perspective to you while you work on DL models. Knowing the distribution of data, correlation between feature vectors will etc allow you to analyze and make better conclusions of the dataset in hand.
+- A basic knowledge of Linear Algebra will enable you to visualize the entire problem as a bunch of feature vectors. Techniques such as vectorization makes your code more efficient as it reduces the number of training loops.
+- Calculus is not really important here but optimization algorithms which look to minimize Cost uses the principle of partial derivatives and chain rule.
+
+### Topics to be covered
+
+#### Statistics(Mostly for Data Analysis)
+
+- Measures of central tendency such as mean, median, variance and standard deviation
+- Correlation between features
+- Visual representation of data using scatter plots, bar graph or histogram
+- Probability Theory and Distributions(Normal Distribution, Gamma distribution, Bayes Rule)
+
+  **Linear Algebra(Implementation)**
+  Not much comes under this but the below listed topics are important pre-requisites.
+
+- Representation of dataset as a Matrix
+- Transpose of a matrix
+- Element and matrix-matrix operations
+- Eigen Values and Eigen vectors
+- Vectorization
+  **Calculus(Not a necessity but would be a great addition when we make custom training loops)**
+- Concept of gradients and convergence using partial derivatives
+- Chain rule
+
+### Programming Language
+
+Python basics would be enough to get started with Deep Learning. Python provides a wide range of libraries such as Numpy, Matplotlib which are easy to understand and use.
+
+**Note**
+While covering the material in this learning path, it would be preferred if you implement the training loops from scratch as it illustrates how the algorithms are actually implemented.
+
+You can use frameworks such as Tensorflow while making projects, after covering the material mentioned in this path
+
+## Section 2
+
+### Basics of Machine Learning
+
+In this section you will be going through some of the basic Machine Learning needed to design neural networks.
+
+- Supervised and Unsupervised Machine learning
+- Linear Regression
+- Random Forests and XGBoost
+
+## Section 3
+
+### Logistic Regression
+
+Logistic regression is the most basic way of solving a classification problem. For example in the above scenario , we need to predict if a Computer would be affected by malware or not, here we classify them into 2 cases→malware affected and not affected by malware.
+
+Logistic regression can be simply looked as a probability function. Where we pass in the features of the computers (X) to get an output (Y) which is the probability if the computer is affected by malware or not.
+
+In this step, you will be going through material related to logistic regression and can build a simple solution to the above mentioned Malware scenario.
+
+\***\*Topics to be covered**
+
+- Activation function used in Logistic regression(Sigmoid function)
+- Loss function of logistic regression(Log Loss)
+- Hyperparameters(number of iterations, learning rate)
+- Multi-class classification(example-check if a given image is a dog, cat, Horse )
+
+The MNIST number dataset provides images of numbers from 0 to 9. Design a model using logistic regression with suitable hyperparameters to classify these images.
+
+### Possible solution to the Malware problem
+
+Office B has completed the task of cleaning the dataset provided to them. B must now decide a base model to build upon. The engineers of B have decided to go with logistic regression. After training multiple times, they have decided upon the following hyperparameters
+
+No of iteration=50,000
+learning rate=0.001
+
+However the accuracy on training is just 55 percent. What could be the reason behind a low accuracy? Find out as we dive into the next couple of sections.
+**Ask yourself these questions once your done with this section**
+
+- Why do we use the log loss instead of a squared error metric?
+- What could be some shortcomings of sigmoid when we progress into deeper networks?
+
+## Section 4
+
+### Neural networks
+
+Logistic regression works fine to an extent, but in more complicated problems like the Malware detection scenario, we need our machine to learn more complex non linear transformations.
+
+In this section, you will be covering material related to implementation of neural networks-Building one, Understanding dimensions, activation functions etc
+
+#### Topics to be covered
+
+- Structure of a neural network(input layer, hidden layers and output layer)
+- Representing neural networks as vectors
+- Forward propagation
+- Backpropagation
+- Activation functions
+
+### Possible solution to malware problem
+
+Company B may build a neural network comprising of 4 hidden layers. The activation function they may use for all layers except the output layer could be a RelU activation function , and a sigmoid function maybe used in the output layer.
+
+However it takes a lot of time to reach convergence. This could be probably due to the noise generated during the normal gradient descent. Also it turns out that model performed very well on train set but on testing, it gave a pretty large deviation in accuracy
+
+Such problems can be solved after covering the material in the next section
+**Ask yourself these questions on finishing this section**
+
+- Can the sigmoid function be used in all layers as the activation function?
+- What could be a possible problem when we use the relU function?
+- Can we really initialize all weights with 0?
+
+## Section 5
+
+### Improving neural networks
+
+As we saw in the previous section, it took a lot of time to reach convergence. In this section we will be dealing with techniques that could help you improve your neural network architecture. We will be going through techniques such as batch gradient descent and certain optimized forms of gradient descent such as RMS prop and Adams.
+
+After covering the material mentioned in this section, you will be able to design a full fledged neural network model and be able to provide a complete solution to the malware problem.
+
+**Topics to be covered**
+1.Regularization
+
+- Underfitting and overfitting
+- Methods of solving underfitting and overfitting
+- L1 Regularization(additional parameter to loss function)
+- Drop out regularization
+
+  2.Normalization
+
+- Reasons for normalization
+- Vanishing and exploding gradients
+- Gradient checking and early stopping
+- Initializing weights(Xavier, He normal)
+
+  3.Optimization
+
+- Mini batch gradient descent
+- The concept of exponentially weighted averages
+- Gradient descent with momentum(Betta hyperparameter)
+- RMS Prop
+- Adams Optimization
+- Learning Rate Decay
+
+#### Possible solution to the Malware Problem
+
+As we saw in the previous section, the model had the issue of overfitting. Therefore dropout or L1 regularization could be tried to overcome this problem. Training the model in mini batches with a batch size of 32 training examples was found to be an ideal hyperparameter in this problem. The algorithm used can be an RMS Prop or Adams optimizer with the addition of learning rate decay if required.
+
+### Project
+
+Build a neural network to classify the labels mentioned in the MNIST Fashion Dataset. Use practices mentioned in this and the previous section in order to build and improve your model.
+
+#### Ask your self these questions on finishing this section
+
+- How would you solve the problem of underfitting?
+- Can Xavier initialization be used for all types of activation functions?
+- What do you think are the various hyperparameters involved while training a neural network?
+
+Congratulations on covering the material mentioned in this path. You can now build a full fledged neural network model and have the ability to tune the hyperparameters based on the scenario and problems faced while training. You can also now solve the problem of high variance/bias, vanishing and exploding gradients. On working on multiple projects, you will be able to gain the experience needed in order to figure out the approach in tuning hyperparameters.
+
+The materials for each step in this path have been attached in the following sections along with a reference project.
+
+## Links and Materials
+
+### Section 1
+
+#### Mathematical Prerequisites
+
+[Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning)
+
+This course provides all the mathematical prerequisites needed. This course can be audited as the assignments are not that important as you will be implementing them when you design your model, however a basic understanding of these concepts is a necessity
+
+A Linear algebra class in university and a high school probability class mostly covers the prerequisites as well.
+
+[Bayes theorem, the geometry of changing beliefs](https://www.youtube.com/watch?v=HZGCoVF3YvM&t=241s)
+
+This is a video that I found very interesting by 3B1B. Its about the Bayes theorem and explains how it works. Feel free to check it out
+
+#### Python
+
+[3.11.1 Documentation](https://docs.python.org/3.11/)
+
+[Data Analysis with Python Course - Numpy, Pandas, Data Visualization](https://www.youtube.com/watch?v=GPVsHOlRBBI&t=9924s)
+
+### Section 2 - Basic Machine Learning Fundamentals
+
+[Machine Learning](https://www.coursera.org/specializations/machine-learning-introduction)
+
+Again this course can be audited as well, however paying for the specialization unlocks the programming assignments. This course is a variant of the initial Machine Learning Stanford course , where the programming assignments were in Matlab. In this specialization, the language used is python.
+
+[Gradient Descent Algorithm-deep dive](https://towardsdatascience.com/gradient-descent-algorithm-a-deep-dive-cf04e8115f21)
+
+A bit too mathematical 💀 but an interesting read.
+
+### Section 3,4 and 5
+
+[Deep Learning](https://www.coursera.org/specializations/deep-learning)
+
+This course can be audited but paying gives access to programming assignments.
+
+## Reference Materials
+
+Below are some materials attached as reference
+
+### Logistic Regression
+
+[logisticregression.pdf](https://drive.google.com/file/d/1FpHajitjTRlWEB4CZhxTA2MFZNhVsSH6/view?usp=sharing)
+
+\***\*Neural network architecture**
+
+[singlelayer_neural_network.pdf](https://drive.google.com/file/d/1XpHAQLEeAptl-cDRqgHupndC2zlWL3vg/view?usp=sharing)
+
+[multilayer_neural_network.pdf](https://drive.google.com/file/d/1AsF1gslg2blkqC3PvlkyToRqLm9mc0eN/view?usp=sharing)
+
+### Optimizing your model
+
+[Regularization](https://drive.google.com/file/d/107vEgccczYftd-rrtyj9GWqZp2SEAUnw/view?usp=sharing)
+
+[Optimizing_your_model](https://drive.google.com/file/d/1tkPoQA12po4ZuTMkqL57zEqUF5kIoXBI/view?usp=sharing)
+
+[Hyperparameter_tuning](https://drive.google.com/file/d/1evtN0f9TpJ-VbIw2bgJR6wBAlNrPh2Qn/view?usp=sharing)
+
+### Research papers
+
+[adams_paper.pdf](https://drive.google.com/file/d/1aolEO3UJP7UVY4FtfUfSUQHT6z0UNAgh/view?usp=sharing)
+
+[activation_functions.pdf](https://drive.google.com/file/d/18dA08HOkCizpFHwM9VwB2WNLyu2JHJWX/view?usp=sharing)
+
+### Projects for Practice
+
+1. [Digit recognizer from the MNIST number dataset](https://www.kaggle.com/c/digit-recognizer)
+2. [Fashion MNIST](https://www.kaggle.com/datasets/zalando-research/fashionmnist)
+
+## Other Links
+
+[Weight Initialization Tips](https://machinelearningmastery.com/weight-initialization-for-deep-learning-neural-networks/)
+
+## General Advice for Learners
+
+This section lists some of the possible mistakes that could be made while learning
+
+### Work on as many projects as possible
+
+Usually when we learn, we lose focus on the task in hand. In ML , yes the theory is very important, but nothing surpasses hand on experience in tackling real world problems. Kaggle has multiple datasets ranging from beginner level to advanced, as learn, you could work on problem statements in Kaggle.
+
+### Normalization
+
+It is important that features are normalized before you train your model. This is because the range of one feature may vary widely from that of another feature. So when you train your neural network model, it may happen so that the weight of one feature is larger/smaller by a large value as compared to another, giving unsatisfactory results
+
+### Theoretical concepts are important
+
+In the previous point , I did mention that projects are the best way to learn, however it is advised to not ignore the theoretical aspects of Deep learning. Proper understanding of fundamental concepts will prove to be very advantageous to you when you encounter problems while developing your model.
+
+## Reference Project
+
+The reference project is one of the simpler projects that I worked on.
+
+### Statement
+
+A number of features related to 6 covid variants would be given. The task is to built a model that would predict the covid variant.
+
+### Code Files
+
+For simplicity, I have created 4 notebooks-each for a specific task.
+
+#### cleaning.ipynb
+
+In this notebook, the dataset is cleaned and preprocessed. Comments have been provided for each cell to explain the reasons behind it.
+
+#### analysis.ipynb
+
+This notebook is for the task of data analysis. I have plotted a couple of scatter plots and histograms to find the correlation and distribution of data respectively. Comments have been added after each step that gives a probable analysis
+
+#### model.ipynb
+
+This notebook is for building and training the neural network model. Comments have been added after each step that explains each step. I have used Tensorflow and Keras to build my model
+
+#### predict.ipynb
+
+For running the model on a test dataset to make predictions of covid variants
+
+### Github Link
+
+[https://github.com/Deceptrax123/covid_variant_detection-](https://github.com/Deceptrax123/covid_variant_detection-)
+
+## Conclusion
+
+Congratulations on completing the material mentioned in this learning path. You can now develop a fully fledged neural network model to classify various labels. You may now explore various sub fields in AI such as natural language processing, computer vision, image generation etc.
+
+Suggestions on improvements to this learning path are always welcome.
