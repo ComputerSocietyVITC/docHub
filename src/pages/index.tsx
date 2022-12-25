@@ -42,5 +42,6 @@ export const Head: HeadFC = () => (
       name="description"
       content="This is your one-stop destination for learning everything you need to know about your favourite tech."
     />
+    <meta name="og:image" content="/src/images/banner-logo.png" />
   </>
 );
