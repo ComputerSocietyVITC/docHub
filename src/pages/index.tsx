@@ -11,7 +11,10 @@ const SEO = () => {
     query {
       site {
         siteMetadata {
+          title
           image
+          description
+          siteUrl
         }
       }
     }
@@ -22,12 +25,12 @@ const SEO = () => {
     <>
       <title>IEEE Computer Society's Documentation website</title>
       <meta name="lang" content="en" />
-      <meta
-        name="description"
-        content="This is your one-stop destination for learning everything you need to know about your favourite tech."
-      />
       <meta name="image" content={seo.image} />
       <meta name="og:image" content={seo.image} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:type" content="website" />
     </>
   );
 };
