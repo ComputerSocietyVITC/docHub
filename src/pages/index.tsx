@@ -1,9 +1,36 @@
 import type { HeadFC, PageProps } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "../../css/gradients.css";
 import { Footer } from "../components/footer";
 import Navbar from "../components/navbar";
+
+const SEO = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          image
+        }
+      }
+    }
+  `);
+
+  const seo = data.site.siteMetadata;
+  return (
+    <>
+      <title>IEEE Computer Society's Documentation website</title>
+      <meta name="lang" content="en" />
+      <meta
+        name="description"
+        content="This is your one-stop destination for learning everything you need to know about your favourite tech."
+      />
+      <meta name="image" content={seo.image} />
+      <meta name="og:image" content={seo.image} />
+    </>
+  );
+};
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -34,14 +61,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => (
-  <>
-    <title>IEEE Computer Society's Documentation website</title>
-    <meta name="lang" content="en" />
-    <meta
-      name="description"
-      content="This is your one-stop destination for learning everything you need to know about your favourite tech."
-    />
-    <meta name="og:image" content="/src/images/banner-logo.png" />
-  </>
-);
+export const Head: HeadFC = () => <SEO />;
