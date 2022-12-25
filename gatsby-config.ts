@@ -6,6 +6,10 @@ const config: GatsbyConfig = {
     siteUrl: `https://beta.ieeecsvitc.com`,
     icon: "/src/images/icon.png",
     image: "/src/images/banner-logo.png",
+    icon_options: {
+      purpose: "any maskable",
+    },
+    legacy: false,
     description:
       "This is your one-stop destination for learning everything you need to know about your favourite tech.",
   },
@@ -23,13 +27,8 @@ const config: GatsbyConfig = {
         start_url: "/",
         theme_color: "#31CE9F",
         background_color: "#262626",
-        description: `This is your one-stop destination for learning everything you need to know about your favourite tech.`,
+        description: `The application does cool things and makes your life better.`,
         short_name: "Learning portal",
-        icon_options: {
-          purpose: "any maskable",
-        },
-        legacy: false,
-        display: "standalone",
       },
     },
     "gatsby-plugin-mdx",
