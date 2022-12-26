@@ -24,7 +24,7 @@ const config: GatsbyConfig = {
       options: {
         icon: "src/images/icon.svg",
         name: "IEEE Computer Society learning docs",
-        start_url: `/`,
+        start_url: `/docs`,
         theme_color: "#31CE9F",
         background_color: "#262626",
         description: `The application does cool things and makes your life better.`,
