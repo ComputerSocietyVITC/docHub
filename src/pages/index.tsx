@@ -31,8 +31,10 @@ const SEO = () => {
 
   const currentTitle = data.site.siteMetadata.siteTitle;
   const currentDescription = data.site.siteMetadata.siteDescription;
-  const siteImage = data.site.siteMetadata.siteImage;
   const siteUrl = data.site.siteMetadata.siteUrl;
+
+  console.log(`${siteUrl}/static/${file.id}/${file.name}${file.ext}`);
+
   return (
     <>
       <title>IEEE Computer Society's Documentation website</title>
