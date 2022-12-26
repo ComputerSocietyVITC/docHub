@@ -31,6 +31,9 @@ const config: GatsbyConfig = {
         short_name: "Learning portal",
         lang: `en`,
         display: `standalone`,
+        icon_options: {
+          purpose: "any maskable",
+        },
       },
     },
     "gatsby-plugin-mdx",
