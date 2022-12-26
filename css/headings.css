@@ -56,3 +56,7 @@ code {
   color: white;
   font-size: small;
 }
+
+a:hover{
+  text-decoration: underline;
+}
