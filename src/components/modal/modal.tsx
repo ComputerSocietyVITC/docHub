@@ -22,7 +22,7 @@ const ButtonInsideModal = (props: IButtonProps): JSX.Element => {
           </li>
         </section>
         <section className="text-white text-md">
-          <a href={`/docs/${props?.slug}`}>
+          <a href={`/docs${props?.slug}`}>
             <IoOpenOutline />
           </a>
         </section>
