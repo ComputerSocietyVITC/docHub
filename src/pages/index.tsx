@@ -31,9 +31,15 @@ const SEO = () => {
       <meta name="lang" content="en" />
       <meta name="googlebot" content="all" />
       <meta name="description" content={currentDescription} />
-      <meta name="image" content={`${siteImage}`} />
+      <meta
+        name="image"
+        content={`https://beta.ieeecsvitc.com/static/39790d024fbbbd61e47812cc5adcfb4b/f3559/icon.png`}
+      />
       <meta name="start_url" content="/" />
-      <meta property="og:image" content={`${siteImage}`} />
+      <meta
+        property="og:image"
+        content={`https://beta.ieeecsvitc.com/static/39790d024fbbbd61e47812cc5adcfb4b/f3559/icon.png`}
+      />
       <meta property="og:title" content={currentTitle} />
       <meta property="og:description" content={currentDescription} />
       <meta property="og:url" content={siteUrl} />
