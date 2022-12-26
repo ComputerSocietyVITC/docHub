@@ -1,11 +1,17 @@
 import type { GatsbyConfig } from "gatsby";
-import rehypeHtml from "rehype";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `IEEE Computer Society VITC Docs`,
+    siteTitle: `IEEE Computer Society VITC Docs`,
     siteUrl: `https://beta.ieeecsvitc.com`,
-    icon: 'src/images/icon.png'
+    icon: "/src/images/icon.png",
+    image: "/src/images/icon.png",
+    icon_options: {
+      purpose: "any maskable",
+    },
+    legacy: false,
+    siteDescription:
+      "This is your one-stop destination for learning everything you need to know about your favourite tech.",
   },
   graphqlTypegen: false,
   plugins: [
@@ -16,21 +22,28 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/icon.svg",
         name: "IEEE Computer Society learning docs",
-        start_url: "/",
+        start_url: `/`,
         theme_color: "#31CE9F",
         background_color: "#262626",
-        description: `The application does cool things and makes your life better.`,
+        description: `This is your one-stop destination for learning everything you need to know about your favourite tech.`,
         short_name: "Learning portal",
+        lang: `en`,
+        display: `standalone`,
+        icon_options: {
+          purpose: "any maskable",
+        },
       },
     },
     "gatsby-plugin-mdx",
     {
-      resolve: `gatsby-plugin-offline`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        precachePages: [`/docs/`, `/`],
+        name: "pages",
+        path: "./src/images/",
       },
+      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",

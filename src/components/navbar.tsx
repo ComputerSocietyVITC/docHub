@@ -17,7 +17,7 @@ const Navbar = (): JSX.Element => {
 
         <section className="hidden md:block lg:block">
           <StaticImage
-            src={"../images/icon.png"}
+            src={"../images/icon.svg"}
             alt="Computer Society Logo"
             className="h-12 w-12"
           />

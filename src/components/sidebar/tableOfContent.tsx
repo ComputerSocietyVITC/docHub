@@ -9,15 +9,15 @@ interface ITableProps {
 const TableContent = (props: ITableProps): JSX.Element => {
   return (
     <>
-      <section className="col-span-2 col-start-9 hidden px-4 font-Plex font-semibold md:grid lg:grid">
+      <section className="hidden md:grid lg:grid col-start-9 col-span-2 lg:px-4 md:px-0 sm:px-0 font-Plex font-semibold ">
         <section className="flex flex-col justify-start pl-4 text-lg text-white">
           <section className="flex items-center justify-start gap-2">
-            <BiMenuAltLeft className="text-2xl" />
+            <BiMenuAltLeft className="lg:text-2xl md:text-xl sm:text-lg" />
             In this page
           </section>
-          <section className="h-0.5 w-1/2 bg-white" />
+          <section className="h-0.5 w-full my-1 rounded px-2 bg-white" />
           <section>
-            <ul className="list-disc">
+            <section className="list-disc">
               {props?.items.map((ele: any) => (
                 <li
                   className="m-0  flex items-start justify-start gap-2 p-1 text-sm font-normal hover:underline"
@@ -26,7 +26,7 @@ const TableContent = (props: ITableProps): JSX.Element => {
                   <a href={`#${idGenerator(ele?.title)}`}>{ele?.title}</a>
                 </li>
               ))}
-            </ul>
+            </section>
           </section>
         </section>
       </section>

@@ -3,11 +3,16 @@ module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx, md. mdx}"],
   theme: {
-    screens: {
-      md: { max: "767px" },
-      sm: { max: "639px" },
-    },
     extend: {
+      screens: {
+        lg: { min: "768px" },
+        // => @media (max-width: 1023px) { ... }
+
+        md: { min: "640px", max: "767px" },
+        // => @media (max-width: 767px) { ... }
+
+        sm: { max: "639px" },
+      },
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
         Monty: ["Montserrat", "sans-serif"],
@@ -16,10 +21,10 @@ module.exports = {
       colors: {
         primary: "#31CE9F",
         darkshades: {
-          active: "#3F3F46",
-          // active:"#0f0f0f",
+          active: "#0f0f0f",
           // passive: "#0f0f0f",
-          passive: "#262626",
+          // passive: "#171717",
+          passive: "#202124",
         },
         textcolors: {
           active: "#FFFFFF",
