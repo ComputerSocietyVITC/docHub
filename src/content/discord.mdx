@@ -1,0 +1,332 @@
+---
+title: Introduction to discord bots
+author: R Visnu
+slug: /discord-is-amazing
+priority: 0
+---
+
+## Foreword
+
+Greetings! In this article, you'll learn how to start with developing Discord bots using Python language and [discord.py](https://pypi.org/project/discord.py/) library(this might not work with the forks of discord.py).
+
+A few FAQ's that I should answer before starting:
+
+- What is Discord?
+
+  [Discord](https://discord.com/app) is a voice, video and text chat app that's used by tens of millions of people ages 13+ to talk and hang out with their communities and friends.
+
+- What is Python?
+  [Python](https://www.python.org/) is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.
+
+- Should I knew programming before starting this?
+  Knowing how to program isn't needed to start with Discord bots, but we will be using a programming language to do it. In this article, a clear roadmap on learning Python and how to start with bots will be explained.
+
+A bit about me:
+I'm Visnu, B.Tech ECE fresher from VIT Chennai, currently a member in the techinical department of IEEE Computer Society club. I started programming when I was in 9th grade, and took it a bit seriously in my 11th and 12th grades. I made my first Discord bot in 2020.
+
+## Introduction
+
+The article is split in multiple sections. If you are new to programming in Python, then please read it from the beginning. If you are slightly experience in Python, then also please read from the beginning. If you are well experienced in Python, then you may start from Introduction to discord.py section.
+
+1. [Introduction to Python](<#introduction to python>)
+   1. [Concurrency](#concurrency)
+2. [Asyncio and aiohttp](<#asyncio and aiohttp>)
+3. [Moving ahead](<#moving ahead>)
+4. [Discord.py](#discord.py)
+   1. [Installation](#installation)
+5. [Our own bot](<#our own bot>)
+   1. [Creating a bot account](<#creating a bot account>)
+   2. [Writing the code](<#writing the code>)
+6. [Wrapping up](<#wrapping up>)
+7. [Resources](#resources)
+
+## Introduction to Python
+
+> [Python](https://www.python.org/) is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.
+
+This is an excerpt from the official website of Python. We are using Python because it is very easy to learn for beginners and suits for well for newbies as well as professionals.
+
+To start with Python, here are a few tutorials that are recommended by me:
+
+- [Official documentation](https://docs.python.org/3/tutorial/)
+- [A very nice book](https://automatetheboringstuff.com/) called Automate the boring stuff
+- [Nice articles](https://realpython.com/) There are some very useful articles and guides in this website
+- [Beginner problems](http://www.codeabbey.com/)
+- [Another great book](https://python.swaroopch.com/)
+- [A very useful video](https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=90s)
+
+### Concurrency
+
+Hopefully you have gone through the above mentioned resources. That should be enough to certify you as a beginner to intermediate level Python programmer. Congrats on that!
+
+Now we come to parallel processing, a concept that is very useful in various languages and a concept that we will be using in our Discord bot.
+Take a look at this example of concurrency in real life (credits to [FastAPI docs](https://fastapi.tiangolo.com/async/))
+
+You go with your crush to get fast food, you stand in line while the cashier takes the orders from the people in front of you. 😍
+
+![](https://fastapi.tiangolo.com/img/async/concurrent-burgers/concurrent-burgers-01.png)
+
+Then it's your turn, you place your order of 2 very fancy burgers for your crush and you. 🍔🍔
+
+![](https://fastapi.tiangolo.com/img/async/concurrent-burgers/concurrent-burgers-02.png)
+
+The cashier says something to the cook in the kitchen so they know they have to prepare your burgers (even though they are currently preparing the ones for the previous clients).
+
+![](https://fastapi.tiangolo.com/img/async/concurrent-burgers/concurrent-burgers-03.png)
+
+You pay. 💸
+
+The cashier gives you the number of your turn.
+
+![](https://fastapi.tiangolo.com/img/async/concurrent-burgers/concurrent-burgers-04.png)
+
+While you are waiting, you go with your crush and pick a table, you sit and talk with your crush for a long time (as your burgers are very fancy and take some time to prepare).
+
+As you are sitting at the table with your crush, while you wait for the burgers, you can spend that time admiring how awesome, cute and smart your crush is ✨😍✨.
+
+![](https://fastapi.tiangolo.com/img/async/concurrent-burgers/concurrent-burgers-05.png)
+
+While waiting and talking to your crush, from time to time, you check the number displayed on the counter to see if it's your turn already.
+
+Then at some point, it finally is your turn. You go to the counter, get your burgers and come back to the table.
+
+![](https://fastapi.tiangolo.com/img/async/concurrent-burgers/concurrent-burgers-06.png)
+
+You and your crush eat the burgers and have a nice time. ✨
+
+![](https://fastapi.tiangolo.com/img/async/concurrent-burgers/concurrent-burgers-07.png)
+
+(Beautiful illustrations by[Ketrina Thompson](https://www.instagram.com/ketrinadrawsalot). 🎨)
+
+Imagine you are the computer / program 🤖 in that story.
+
+While you are at the line, you are just idle 😴, waiting for your turn, not doing anything very "productive". But the line is fast because the cashier is only taking the orders (not preparing them), so that's fine.
+
+Then, when it's your turn, you do actual "productive" work, you process the menu, decide what you want, get your crush's choice, pay, check that you give the correct bill or card, check that you are charged correctly, check that the order has the correct items, etc.
+
+But then, even though you still don't have your burgers, your work with the cashier is "on pause" ⏸, because you have to wait 🕙 for your burgers to be ready.
+
+But as you go away from the counter and sit at the table with a number for your turn, you can switch 🔀 your attention to your crush, and "work" ⏯ 🤓 on that. Then you are again doing something very "productive" as is flirting with your crush 😍.
+
+Then the cashier 💁 says "I'm finished with doing the burgers" by putting your number on the counter's display, but you don't jump like crazy immediately when the displayed number changes to your turn number. You know no one will steal your burgers because you have the number of your turn, and they have theirs.
+
+So you wait for your crush to finish the story (finish the current work ⏯ / task being processed 🤓), smile gently and say that you are going for the burgers ⏸.
+
+Then you go to the counter 🔀, to the initial task that is now finished ⏯, pick the burgers, say thanks and take them to the table. That finishes that step / task of interaction with the counter ⏹. That in turn, creates a new task, of "eating burgers" 🔀 ⏯, but the previous one of "getting burgers" is finished ⏹.
+
+This is an excellent example of how concurrency works. Multiple people will be using our Discord bot simultaneously. If the bot is stuck with executing the command of one person, then the flow would stop and the bot will become very slow. To prevent this, we are using concurrency in our program. This is also known as asynchronicity. This is what made NodeJS popular in first place.
+
+There is something similar to concurrency called parallelism. Let's imagine the same situation as above, but instead of one cashier, there are multiple cooks present at the counter. When you give a order, they go make the food right away and bring it back to you. But in this one, you will have to stay there itself and wait for your order(you are synchronised with the cook). Unlike the concurrent situation, you will have to wait till your order comes or someone else will take your burger.
+In this scenario of the parallel burgers, you are a computer / program with two processors (you and your crush), both waiting and dedicating their attention to be "waiting on the counter" for a long time.
+
+The fast food store has 8 processors (cashiers/cooks). While the concurrent burgers store might have had only 2 (one cashier and one cook).
+
+But still, the final experience is not the best.
+
+Now some may say that "Concurrency is better than parallelism". But that would be wrong to say as they are two different things. When we combine the power of both, we can exceptionally great frameworks that can do things real quick.
+
+[Please check the full article here](https://fastapi.tiangolo.com/async/). A very wonderful read.
+
+And that's the end of our introduction section.
+
+## Asyncio and aiohttp
+
+Asyncio is a Python library to write **concurrent** code using the **async/await** syntax.
+It is the foundation of multiple asynchronous frameworks in written in Python. They provide high-performance network and web-servers, database connection libraries, distributed task queues, etc.
+
+Some resources to get started with asyncio:
+
+- [Real python article on asyncio](https://realpython.com/async-io-python/)
+- [Official docs](https://docs.python.org/3/library/asyncio.html)
+- [Another great article](https://medium.com/dev-bits/a-minimalistic-guide-for-understanding-asyncio-in-python-52c436c244ea)
+-
+
+Now that we know what asyncio is, let us take a look at aiohttp.
+Aiohttp is an HTTP client/server library based over asyncio. It enables us to handle web requests asynchronously to deliver more power. Deep inside discord.py library, the bot uses aiohttp to connnect to the Discord API and interact with it. We will also be using aiohttp in our Discord bot if we have to make requests to an external service, to maintain the concurrency.
+
+The [documentation](https://docs.aiohttp.org/en/stable/) of aiohttp is a great place to start with it.
+
+## Moving ahead
+
+If you have come this far into the article, then congratulations!! You are almost ready to start making a discord bot.
+
+Now all you have to do is build your confidence and expertise with the Python language. To do that, you can work on a few personal projects and/or solve questions on Hackerrank,Codechef,etc.
+
+[A very huge list of project ideas](https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/)
+[Project Euler](https://projecteuler.net/) a series of challenging programming problems. Honestly speaking, if you are able to solve the difficult ones, you are God.
+
+That should do it. Let's get into bot development.
+
+## Discord.py
+
+Discord.py is a modern, easy to use, feature-rich, and async ready API wrapper for Discord written in Python.
+It's key features are:
+
+- Modern Pythonic API using `async` and `await`.
+- Proper rate limit handling.
+- Optimised in both speed and memory.
+
+## Installation:
+
+**Python 3.8 or higher is required**
+To install the library without full voice support, you can just run the following command:
+
+Linux and MacOS
+`python3 -m pip install -U discord.py`
+
+Windows
+`py -3 -m pip install -U discord.py`
+(or)
+`pip install discord.py`
+
+Otherwise to get voice support you should run the following command:
+
+Linux/MacOS
+
+```sh
+python3 -m pip install -U "discord.py[voice]"
+```
+
+Windows
+` py -3 -m pip install -U discord.py[voice]``
+(or)
+ `pip install discord.py[voice]``
+
+To install the development version, do the following:
+
+```
+
+$ git clone https://github.com/Rapptz/discord.py
+$ cd discord.py
+$ python3 -m pip install -U .[voice]
+
+```
+
+There are multiple libraries in Python that interface with the Discord API. We are using this library as it has been the standard one for a long time and has a huge community. So it is easy to get help when you are using this library.
+
+[Documentation for discord.py](https://discordpy.readthedocs.io/en/latest/index.html)
+[Documentation of Discord API](https://discord.com/developers/docs/intro)
+
+## Our own bot
+
+Now that we know what library we are going to use, let us make our own Discord bot. Get excited!
+(At this point, I am assuming that you already have a Discord account)
+
+## Creating a Bot account
+
+First of all you have to create a bot account in Discord. You may follow [this](https://discordpy.readthedocs.io/en/latest/discord.html) guide to create a bot account.
+
+## Writing the code
+
+Once you are done with it, we will use this example code.
+
+```python
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix='>', intents=intents)
+
+@bot.command(name='ping')
+async def ping(ctx:commands.Context):
+    await ctx.send('pong')
+
+bot.run('tokenyourcopiedfromdeveloperportal')
+```
+
+You may have noticed the usage of something called `intents` here. Discord has this unique way of protecting user data from being used by bots. Intents basically tells Discord what kind of data you need from Discord API. Some data are available freely no matter you specify or not. Some like message content, user profile information, come under privileged intents which you have to manually enable in Developer portal and specify in this code.
+In this code, we are requesting for `message_content` intent, it enables us to receive messages on bot. That way we can read the message and respond accordingly.
+
+`bot` is an instance of commands.Bot object that facilitates the creation of commands. The `command_prefix` keyword argument in it specifies the prefix of the commands. If a message starts with that prefix, then it will be considered as a command.
+
+`intents` keyword argument in `bot` is used to specify the intents to request for from the Discord API.
+
+`@bot.command` is a decorator object that wraps around the async function `ping`. All command functions will be asynchronous functions in this, to maintain the concurrency in the code. The first argument in a command function will always be `ctx`, i.e, context. The function will be called with that argument and `ctx` provides information like who executed the command, where it was executed, etc.
+
+`ctx.send('pong')` is the function call to send a message with content 'pong'. It sends the message in same channel as the command was executed. We are using `await` in front of the function call because it is an async function. When you call an async function, a coroutine is returned that has to be `await`ed to have it run.
+
+`bot.run` function is the one that starts the bot. We are supplying it with our bot's token that we took from Discord Developer Portal. **Never reveal this token to anyone, it basically gives complete access to your bot and the servers it is in to anyone who has this token**
+
+Let us add more stuff to our bot.
+We will create a command, that returns a random cat picture from an [API](https://api.thecatapi.com/v1/images/search).
+Since the bot is running in an async environment, we will be using aiohttp instead of requests to request the cat pic from the API.
+
+```python
+@bot.command(name='catpost')
+async def catpics(ctx:commands.Context)
+	async with aiohttp.ClientSession() as session:
+		async with session.get('https://api.thecatapi.com/v1/images/search') as r:
+			if resp.status==200:
+				#checking if it returns status code 200, status code 200 means OK
+				j=await r.json() #converts request data to a json object
+				url=j[0]['url'] #returns the url
+	embed=discord.Embed(title='Random Cat pic!!',description='Here have a cat pic')
+	#this is an embed, the fancy box messages you see from bots are made using these
+	embed.set_image(url=url)
+	#setting the image in embed
+	await ctx.send(embed=embed)
+	#sending the message along with embed
+```
+
+This is the complete function of our simple command. Looks easy right?
+Now after adding this to our original code, the final code is:
+
+```python
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix='>', intents=intents)
+
+@bot.command(name='ping')
+async def ping(ctx:commands.Context):
+    await ctx.send('pong')
+
+@bot.command(name='catpost')
+async def catpics(ctx:commands.Context):
+	async with aiohttp.ClientSession() as session:
+		async with session.get('https://api.thecatapi.com/v1/images/search') as r:
+			if resp.status==200:
+				#checking if it returns status code 200, status code 200 means OK
+				j=await r.json() #converts request data to a json object
+				url=j[0]['url'] #returns the url
+	embed=discord.Embed(title='Random Cat pic!!',description='Here have a cat pic')
+	#this is an embed, the fancy box messages you see from bots are made using these
+	embed.set_image(url=url)
+	#setting the image in embed
+	await ctx.send(embed=embed)
+	#sending the message along with embed
+
+bot.run('tokenyourcopiedfromdeveloperportal')
+
+```
+
+For running the bot, save this and you can run it as you would do for a normal file. If you are in IDLE, just click F5, if you are using the command line do `python filename.py`
+
+Let us go to the server where we invited the bot and run the two commands that we made.
+
+![ping command](https://cdn.discordapp.com/attachments/889873953479356436/1056485373292859392/image.png)
+
+![catpost command](https://cdn.discordapp.com/attachments/889873953479356436/1056485335330205736/image.png)
+
+And there, my friends, we end this guide.
+
+## Wrapping up
+
+We can do a lot of things with Discord bots. The possibilities are endless. To give you a glimpse of the power of Discord bots, here is a picture of a GameBoy Colour emulator running inside of Discord on a Discord bot.
+
+![The image](https://media.discordapp.net/attachments/889873953479356436/1056486630569025586/image.png)
+(Source at end)
+
+This may look like a very complex one (it is as a matter of fact). But it will not look that difficult once you have started your journey with Discord bots :)
+
+## Resources
+
+- [Bot examples](https://github.com/Rapptz/discord.py/tree/master/examples)
+- [Kraken bot](https://github.com/Calciumcarbonate321/kraken) the bot that has the gameboy colour emulator
+- [Another big bot](https://github.com/Rapptz/RoboDanny/) from whose code you can learn a lot
+- [Support server of discord.py](https://discord.gg/dpy) As I've mentioned earlier, the huge community of discord.py will surely help you at any point in your bot development.
+
+You are also always free to contact me via the club. I am more than happy to help you out with anything related to this. I'm Visnu and see you later!

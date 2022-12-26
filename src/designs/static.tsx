@@ -24,7 +24,7 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
       <ContentComponent>
         <>
           <Sidebar name={pageContext?.title} />
-          <section className="xs:col-start-1 sm:col-start-1 sm:col-span-1 md:col-start-3 lg:col-start-3 lg:col-span-6 px-2">
+          <section className="px-2 sm:col-start-1 sm:col-span-1 md:col-start-3 md:col-span-6 lg:col-start-3 lg:col-span-6">
             <h1 className="pt-2 text-4xl font-extrabold text-gray-200">
               {pageContext.title}
             </h1>

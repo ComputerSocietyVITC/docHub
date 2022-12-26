@@ -5,37 +5,20 @@ slug: /neural-networks
 priority: 7
 ---
 
-# Domain Specifics
+## Domain Specifics
 
 Deep Neural Networks (DNL) is a subfield of machine learning (ML) in artificial intelligence (AI) that deals with algorithms inspired from the biological structure and functioning of a brain to aid machines with intelligence.
-
 Machine learning can be defined as the process of inducing intelligence into a system or machine without explicit programming.So, where does DNL stand within this context? It happens that while ML works very well for a variety of problems, it fails to excel in some specific cases that seem to be very easy for humans: say, classifying an image as a cat or dog, distinguishing an audio clip as of a male or female voice, and so on. ML performs poorly with image and other unstructured data types. Upon researching the reasons for this poor performance, an inspiration led to the idea of mimicking the human brain’s biological process, which is composed of billions of neurons connected and orchestrated to adapt to learning new things.
 
-# Use cases
+## Use cases
 
-Neural networks are often used for statistical analysis and data modelling, in which
-
-their role is perceived as an alternative to standard nonlinear regression or cluster
-
-analysis techniques . Thus, they are typically used in
-
-problems that may be couched in terms of classification, or forecasting. Some
-
-examples include image and speech recognition, textual character recognition, and
-
-domains of human expertise such as medical diagnosis, geological survey for oil,
-
-and financial market indicator prediction. This type of problem also falls within the
-
-domain of classical artificial intelligence (AI) so that engineers and computer
-
-scientists see neural nets as offering a style of parallel distributed computing,
-
-thereby providing an alternative to the conventional algorithmic techniques that
-
+Neural networks are often used for statistical analysis and data modelling, in which Dtheir role is perceived as an alternative to standard nonlinear regression or cluster analysis techniques . Thus, they are typically used in problems that may be couched in terms of classification, or forecasting. Some
+examples include image and speech recognition, textual character recognition, and domains of human expertise such as medical diagnosis, geological survey for oil,
+and financial market indicator prediction. This type of problem also falls within the domain of classical artificial intelligence (AI) so that engineers and computer
+scientists see neural nets as offering a style of parallel distributed computing, thereby providing an alternative to the conventional algorithmic techniques that
 have dominated in machine intelligence
 
-# Software Development and practices
+## Software Development and practices
 
 - Python([https://www.python.org/](https://www.python.org/))
 - Numpy([NumPy](https://numpy.org/))
@@ -46,7 +29,7 @@ have dominated in machine intelligence
 - Keras([https://keras.io/](https://keras.io/))
 - If one has a strong enough pc(with at least 16 GB RAM, M.2 SSD, RTX2080 super , i7 11th gen or ryzen 7 5000 series) they can do it on jupyter([https://jupyter.org/](https://jupyter.org/)) else use keggle([https://www.kaggle.com/](https://www.kaggle.com/))
 
-# Roadmap
+## Roadmap
 
 - **PYTHON**
 - Basics
@@ -55,29 +38,18 @@ have dominated in machine intelligence
 - Matplotlib,Seaborn
 - **NEURAL NETWORKS:**
 
-  1.Neurons
+  1. Neurons
+  2. Activation Function-Sigmoid Activation Function,ReLU Activation Function
+     Layers-Core Layers,Dense Layer,Dropout Layer,Embedding layers ,Convolutional
+     layers,Pooling layers ,Merge layers ,Recurrent layers ,Normalization layers and many
+     more
+  3. The Loss Function
+  4. Optimizers-Adagrad,Adadelta, RMSProp, Adamax, Nadam
+  5. Metrics-Binary Accuracy ,Categorical Accuracy,Sparse Categorical Accuracy
+  6. Model Training
+  7. Model Evaluation
 
-  2.Activation Function-Sigmoid Activation Function,ReLU Activation Function
-
-       Layers-Core Layers,Dense Layer,Dropout Layer,Embedding layers ,Convolutional
-
-
-       layers,Pooling layers ,Merge layers ,Recurrent layers ,Normalization layers and many
-
-
-       more
-
-  3.The Loss Function
-
-  4.Optimizers-Adagrad,Adadelta, RMSProp, Adamax, Nadam
-
-  5.Metrics-Binary Accuracy ,Categorical Accuracy,Sparse Categorical Accuracy
-
-  6.Model Training
-
-  7.Model Evaluation
-
-# YouTube, Other Internet Links and other references:
+## YouTube, Other Internet Links and other references:
 
 - [https://www.youtube.com/watch?v=H1elmMBnykA](https://www.youtube.com/watch?v=H1elmMBnykA) [Python by Derek Banas]
 - [https://www.youtube.com/watch?v=LOQHYn7BLAg](https://www.youtube.com/watch?v=LOQHYn7BLAg) [Pandas, Numpy and Ploty by Derek Banas]
@@ -88,22 +60,20 @@ have dominated in machine intelligence
 - **BOOKS:**
 
   Learn Keras for Deep Neural Networks -By Jojo Moolayil [for clear understanding of minute but valuable concepts]
-
   Convolutional Neural Networks in Python -By:The LazyProgrammer ([http://lazyprogrammer.me](http://lazyprogrammer.me))
-
   [for some advance projects]
 
-# General Mistakes
+## General Mistakes
 
 - Usage of incorrect learning rates which causes a lot of problems. It sometimes may make the training impossible.
 - Models used to be too wide but not deep enough.
 - Large numbers of epochs or iterations or using a deeper neural network do not guarantee good validation accuracy.
 
-# Reference Project
+## Reference Project
 
 **BASIC PROJECT(getting it all together):**
 
-```
+```py
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Activation
@@ -136,7 +106,7 @@ validation_data=(x_val,y_val))
 
 **MNIST PROJECT:**
 
-```
+```py
 import tensorflow
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Activation
@@ -171,7 +141,7 @@ print(x_train[0])
 
 Output of code above- This is our dataset
 
-```
+```py
 # build a sequential model
 model = Sequential()
 # the first layer has to specify the dimensions of the input vector
@@ -195,6 +165,7 @@ model.fit(x_train, y_train, batch_size=1, epochs=n_epochs)
 
 Model: "sequential_3"
 
+```py
 ---
 
 Layer (type) Output Shape Param #
@@ -238,16 +209,21 @@ Epoch 4/4
 60000/60000 [==============================] - 101s 2ms/step - loss: 0.3207 - accuracy: 0.9103
 
 ```
-# evaluate the model and print the accuracy score
+
+---
+
+## Evaluate the model and print the accuracy score
+
+```py
 scores = model.evaluate(x_test, y_test)
 print('\n loss:', scores[0])
 print('\n accuracy:', scores[1])
+
 ```
 
+```sh
 **313/313 [==============================] - 1s 2ms/step - loss: 0.1625 - accuracy: 0.9534**
-
 **Loss: 0.16250382363796234**
-
 **Accuracy: 0.9534000158309937**
-
 Executing and understanding the above code on kaggle or collab will give the basic idea
+```
