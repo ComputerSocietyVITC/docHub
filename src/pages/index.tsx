@@ -21,7 +21,6 @@ const SEO = () => {
     }
   `);
 
-  const currentUrl = data.site.siteMetadata.siteUrl;
   const currentTitle = data.site.siteMetadata.siteTitle;
   const currentDescription = data.site.siteMetadata.siteDescription;
   const siteImage = data.site.siteMetadata.siteImage;
