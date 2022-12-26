@@ -22,7 +22,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/icon.svg",
         name: "IEEE Computer Society learning docs",
         start_url: `/`,
         theme_color: "#31CE9F",
