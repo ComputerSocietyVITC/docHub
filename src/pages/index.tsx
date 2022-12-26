@@ -33,12 +33,12 @@ const SEO = () => {
       <meta name="description" content={currentDescription} />
       <meta
         name="image"
-        content={`https://beta.ieeecsvitc.com/static/39790d024fbbbd61e47812cc5adcfb4b/f3559/icon.png`}
+        content={`https://beta.ieeecsvitc.com/static/c952f52a14965266e5eb3e065247993c/27b2c/banner-logo.png`}
       />
       <meta name="start_url" content="/" />
       <meta
         property="og:image"
-        content={`https://beta.ieeecsvitc.com/static/39790d024fbbbd61e47812cc5adcfb4b/f3559/icon.png`}
+        content={`https://beta.ieeecsvitc.com/static/c952f52a14965266e5eb3e065247993c/27b2c/banner-logo.png`}
       />
       <meta property="og:title" content={currentTitle} />
       <meta property="og:description" content={currentDescription} />
