@@ -12,7 +12,7 @@ const SEO = () => {
       site {
         siteMetadata {
           siteTitle
-          siteImage
+          image
           icon
           siteDescription
           siteUrl
