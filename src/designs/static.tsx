@@ -24,11 +24,11 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
       <ContentComponent>
         <>
           <Sidebar name={pageContext?.title} />
-          <section className="col-span-6 col-start-3 px-2">
+          <section className="xs:col-start-1 sm:col-start-1 sm:col-span-1 md:col-start-3 lg:col-start-3 lg:col-span-6 px-2">
             <h1 className="pt-2 text-4xl font-extrabold text-gray-200">
               {pageContext.title}
             </h1>
-            <h2 className="p-0 font-Plex text-lg font-bold text-primary">
+            <h2 className="font-Plex text-lg font-bold text-primary">
               Authored by: {pageContext.author}
             </h2>
             <Content />
