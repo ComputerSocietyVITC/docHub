@@ -33,7 +33,7 @@ const SEO = () => {
   const currentDescription = data.site.siteMetadata.siteDescription;
   const siteImage = data.site.siteMetadata.siteImage;
   const siteUrl = data.site.siteMetadata.siteUrl;
-  console.log(`${siteUrl}/static/${file.id}/${file.name}${file.ext}`);
+  console.log(`https://beta.ieeecsvitc.com/static/c952f52a14965266e5eb3e065247993c/27b2c/banner-logo.png${file.ext}`);
   return (
     <>
       <title>IEEE Computer Society's Documentation website</title>
@@ -42,7 +42,7 @@ const SEO = () => {
       <meta name="description" content={currentDescription} />
       <meta
         name="image"
-        content={`${siteUrl}/static/${file.id}/${file.name}`}
+        content={`https://beta.ieeecsvitc.com/static/c952f52a14965266e5eb3e065247993c/27b2c/banner-logo.png`}
       />
       <meta name="start_url" content="/" />
       <meta property="og:image" content={`${siteImage}`} />
