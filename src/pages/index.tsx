@@ -25,17 +25,15 @@ const SEO = () => {
   const currentDescription = data.site.siteMetadata.siteDescription;
   const siteImage = data.site.siteMetadata.siteImage;
   const siteUrl = data.site.siteMetadata.siteUrl;
-  const currentImagePath = siteUrl + "/" + siteImage.replace("/src/images/", "/");
-  console.log(currentImagePath);
   return (
     <>
       <title>IEEE Computer Society's Documentation website</title>
       <meta name="lang" content="en" />
       <meta name="googlebot" content="all" />
       <meta name="description" content={currentDescription} />
-      <meta name="image" content={`${currentImagePath}`} />
+      <meta name="image" content={`${siteImage}`} />
       <meta name="start_url" content="/" />
-      <meta property="og:image" content={`${currentImagePath}`} />
+      <meta property="og:image" content={`${siteImage}`} />
       <meta property="og:title" content={currentTitle} />
       <meta property="og:description" content={currentDescription} />
       <meta property="og:url" content={siteUrl} />
