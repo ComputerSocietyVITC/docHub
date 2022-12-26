@@ -2,15 +2,15 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `IEEE Computer Society VITC Docs`,
+    siteTitle: `IEEE Computer Society VITC Docs`,
     siteUrl: `https://beta.ieeecsvitc.com`,
     icon: "/src/images/icon.png",
-    image: "/src/images/banner-logo.png",
+    siteImage: "/src/images/banner-logo.png",
     icon_options: {
       purpose: "any maskable",
     },
     legacy: false,
-    description:
+    siteDescription:
       "This is your one-stop destination for learning everything you need to know about your favourite tech.",
   },
   graphqlTypegen: false,

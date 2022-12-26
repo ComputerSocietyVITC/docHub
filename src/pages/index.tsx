@@ -1,6 +1,6 @@
 import type { HeadFC, PageProps } from "gatsby";
 import { graphql, useStaticQuery } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage, getSrc } from "gatsby-plugin-image";
 import * as React from "react";
 import "../../css/gradients.css";
 import { Footer } from "../components/footer";
@@ -11,29 +11,35 @@ const SEO = () => {
     query {
       site {
         siteMetadata {
-          title
-          image
+          siteTitle
+          siteImage
           icon
-          description
+          siteDescription
           siteUrl
         }
       }
     }
   `);
 
-  const seo = data.site.siteMetadata;
+  const currentUrl = data.site.siteMetadata.siteUrl;
+  const currentTitle = data.site.siteMetadata.siteTitle;
+  const currentDescription = data.site.siteMetadata.siteDescription;
+  const siteImage = data.site.siteMetadata.siteImage;
+  const siteUrl = data.site.siteMetadata.siteUrl;
+  const currentImagePath = siteUrl + siteImage;
+
   return (
     <>
       <title>IEEE Computer Society's Documentation website</title>
       <meta name="lang" content="en" />
       <meta name="googlebot" content="all" />
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={`${seo.siteUrl}/banner-logo.png`} />
+      <meta name="description" content={currentDescription} />
+      <meta name="image" content={`${currentImagePath}`} />
       <meta name="start_url" content="/" />
-      <meta property="og:image" content={`${seo.siteUrl}/banner-logo.png`} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:url" content={seo.siteUrl} />
+      <meta property="og:image" content={`${currentImagePath}`} />
+      <meta property="og:title" content={currentTitle} />
+      <meta property="og:description" content={currentDescription} />
+      <meta property="og:url" content={siteUrl} />
       <meta property="og:type" content="website" />
     </>
   );
