@@ -25,7 +25,7 @@ const SEO = () => {
   const currentDescription = data.site.siteMetadata.siteDescription;
   const siteImage = data.site.siteMetadata.siteImage;
   const siteUrl = data.site.siteMetadata.siteUrl;
-  const currentImagePath = siteUrl + siteImage.replace("/src/images/", "/");
+  const currentImagePath = siteUrl + "/" + siteImage.replace("/src/images/", "/");
   console.log(currentImagePath);
   return (
     <>
