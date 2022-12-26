@@ -23,7 +23,7 @@ const SEO = () => {
 
   const currentTitle = data.site.siteMetadata.siteTitle;
   const currentDescription = data.site.siteMetadata.siteDescription;
-  const siteImage = data.site.siteMetadata.siteImage;
+  const siteImage = data.site.siteMetadata.image;
   const siteUrl = data.site.siteMetadata.siteUrl;
   return (
     <>
