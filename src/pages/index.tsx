@@ -1,6 +1,6 @@
 import type { HeadFC, PageProps } from "gatsby";
 import { graphql, useStaticQuery } from "gatsby";
-import { StaticImage, getImage } from "gatsby-plugin-image";
+import { StaticImage, getImage, getSrcSet } from "gatsby-plugin-image";
 import * as React from "react";
 import "../../css/gradients.css";
 import { Footer } from "../components/footer";
@@ -13,6 +13,7 @@ const SEO = () => {
         siteMetadata {
           siteTitle
           icon
+          image
           siteDescription
           siteUrl
         }
@@ -33,7 +34,11 @@ const SEO = () => {
   const currentDescription = data.site.siteMetadata.siteDescription;
   const siteUrl = data.site.siteMetadata.siteUrl;
 
-  console.log(`${siteUrl}/static/${file.id}/${file.name}${file.ext}`);
+  console.log(
+    `${siteUrl}/static/${file.id}/${file.name}${file.ext}`,
+    getSrcSet(data.site.siteMetadata.image),
+    data.site.siteMetadata.image
+  );
 
   return (
     <>
