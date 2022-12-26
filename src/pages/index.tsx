@@ -1,6 +1,6 @@
 import type { HeadFC, PageProps } from "gatsby";
 import { graphql, useStaticQuery } from "gatsby";
-import { StaticImage, getSrc } from "gatsby-plugin-image";
+import { StaticImage, getImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "../../css/gradients.css";
 import { Footer } from "../components/footer";
@@ -25,8 +25,8 @@ const SEO = () => {
   const currentDescription = data.site.siteMetadata.siteDescription;
   const siteImage = data.site.siteMetadata.siteImage;
   const siteUrl = data.site.siteMetadata.siteUrl;
-  const currentImagePath = siteUrl + siteImage;
-
+  const currentImagePath = siteUrl + siteImage.replace("/src/images/", "/");
+  console.log(currentImagePath);
   return (
     <>
       <title>IEEE Computer Society's Documentation website</title>

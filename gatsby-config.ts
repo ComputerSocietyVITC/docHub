@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     siteTitle: `IEEE Computer Society VITC Docs`,
     siteUrl: `https://beta.ieeecsvitc.com`,
     icon: "/src/images/icon.png",
-    siteImage: "/src/images/banner-logo.png",
+    siteImage: "banner-logo.png",
     icon_options: {
       purpose: "any maskable",
     },
