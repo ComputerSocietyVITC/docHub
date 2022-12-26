@@ -25,6 +25,8 @@ const SEO = () => {
     <>
       <title>IEEE Computer Society's Documentation website</title>
       <meta name="lang" content="en" />
+      <meta name="googlebot" content="all"/>
+      <meta property="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta name="og:image" content={seo.image} />
       <meta property="og:title" content={seo.title} />
