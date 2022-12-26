@@ -12,19 +12,28 @@ const SEO = () => {
       site {
         siteMetadata {
           siteTitle
-          image
           icon
           siteDescription
           siteUrl
         }
       }
+      allFile(filter: { ext: { eq: ".png" }, name: { eq: "banner-logo" } }) {
+        nodes {
+          id
+          name
+          ext
+        }
+      }
     }
   `);
 
+  const file = data.allFile.nodes[0];
+
   const currentTitle = data.site.siteMetadata.siteTitle;
   const currentDescription = data.site.siteMetadata.siteDescription;
-  const siteImage = data.site.siteMetadata.image;
+  const siteImage = data.site.siteMetadata.siteImage;
   const siteUrl = data.site.siteMetadata.siteUrl;
+  console.log(`${siteUrl}/static/${file.id}/${file.name}${file.ext}`);
   return (
     <>
       <title>IEEE Computer Society's Documentation website</title>
@@ -33,13 +42,10 @@ const SEO = () => {
       <meta name="description" content={currentDescription} />
       <meta
         name="image"
-        content={`https://beta.ieeecsvitc.com/static/c952f52a14965266e5eb3e065247993c/27b2c/banner-logo.png`}
+        content={`${siteUrl}/static/${file.id}/${file.name}`}
       />
       <meta name="start_url" content="/" />
-      <meta
-        property="og:image"
-        content={`https://beta.ieeecsvitc.com/static/c952f52a14965266e5eb3e065247993c/27b2c/banner-logo.png`}
-      />
+      <meta property="og:image" content={`${siteImage}`} />
       <meta property="og:title" content={currentTitle} />
       <meta property="og:description" content={currentDescription} />
       <meta property="og:url" content={siteUrl} />
