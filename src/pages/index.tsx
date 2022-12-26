@@ -28,11 +28,13 @@ const SEO = () => {
       <meta name="googlebot" content="all" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <meta name="start_url" content="/" />
       <meta name="og:image" content={seo.image} />
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
+      
     </>
   );
 };
