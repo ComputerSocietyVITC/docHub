@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
         start_url: `/`,
         theme_color: "#31CE9F",
         background_color: "#262626",
-        description: `The application does cool things and makes your life better.`,
+        description: `This is your one-stop destination for learning everything you need to know about your favourite tech.`,
         short_name: "Learning portal",
         lang: `en`,
         display: `standalone`,
@@ -37,6 +37,14 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

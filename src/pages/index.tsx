@@ -13,6 +13,7 @@ const SEO = () => {
         siteMetadata {
           title
           image
+          icon
           description
           siteUrl
         }
@@ -27,7 +28,7 @@ const SEO = () => {
       <meta name="lang" content="en" />
       <meta name="googlebot" content="all" />
       <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+      <meta name="image" content={seo.icon} />
       <meta name="start_url" content="/" />
       <meta name="og:image" content={seo.image} />
       <meta property="og:title" content={seo.title} />
