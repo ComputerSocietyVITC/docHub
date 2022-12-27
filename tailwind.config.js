@@ -5,10 +5,10 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        lg: { min: "768px" },
+        lg: { min: "1024px" },
         // => @media (max-width: 1023px) { ... }
 
-        md: { min: "640px", max: "767px" },
+        md: { min: "640px", max: "1023px" },
         // => @media (max-width: 767px) { ... }
 
         sm: { max: "639px" },
@@ -21,10 +21,11 @@ module.exports = {
       colors: {
         primary: "#31CE9F",
         darkshades: {
-          active: "#0f0f0f",
+          active: "#202020",
+          // active: "#0f0f0f",
           // passive: "#0f0f0f",
-          // passive: "#171717",
-          passive: "#202124",
+          passive: "#111111",
+          // passive: "#202124",
         },
         textcolors: {
           active: "#FFFFFF",

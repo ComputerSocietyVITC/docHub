@@ -70,7 +70,11 @@ const Modal: React.FC = (): JSX.Element => {
       </section>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="section" className="relative z-10" onClose={closeModal}>
+        <Dialog
+          as="section"
+          className="relative z-10 max-h-screen"
+          onClose={closeModal}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
