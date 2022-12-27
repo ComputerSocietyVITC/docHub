@@ -60,3 +60,7 @@ code {
 a:hover {
   text-decoration: double;
 }
+
+a{
+  text-decoration: underline;
+}
