@@ -1,113 +1,75 @@
-﻿---
+---
 
-slug: /intro-to-linux
-
+slug: /linux-dev
 author: Ashwin Ponnur
-
 title: Introduction to Linux 
-
 priority: 10
 
 ---
 
-**Domain Specifics**
+## Domain Specifics
 
 Linux is a free and open source operating system created by Linus Torvalds. The operating system is a program that manages the communication between a computer’s software and hardware. Linux is the most popular operating system for servers as it is free, secure and can be easily managed from the command line, which means that a graphical display is not necessary. A virtual machine, such as ‘Oracle VM VirtualBox’ can be used to run linux without having to make actual partitions on a drive.
 Linux consists of many different components, which are:
 
 1. **Bootloader** – The software that manages the boot process of your computer. For most users, this will simply be a splash screen that pops up and eventually goes away to boot into the operating system.
-
 2. **Kernel** – This is the one piece of the whole that is actually called ‘Linux’. The kernel is the core of the system and manages the CPU, memory, and peripheral devices. The kernel is the lowest level of the OS.
-
 3. **Init system** – This is a sub-system that bootstraps the user space and is charged with controlling daemons. One of the most widely used init systems is systemd, which also happens to be one of the most controversial. It is the init system that manages the boot process, once the initial booting is handed over from the bootloader (i.e., GRUB or reFIND).
-
 4. **Daemons** – These are background services (printing, sound, scheduling, etc.)  that either startup during boot or after the user logs into the desktop.
-
 5. **Graphical server** – This is the subsystem that displays the graphics on your monitor. The two graphical servers used are xorg and wayland.
-
 6. **Desktop environment** – The desktop environment is the main graphical interface most users interact with. It defines the default looks, behaviour and
 resource consumption of the system. Some popular desktop environments are KDE, Gnome, XFCE.
-
 7. **Applications** – Desktop environments do not offer the full array of apps. Just like Windows and macOS, Linux offers thousands upon thousands of high-quality
 software titles that can be easily found and installed. Most modern Linux distributions include App Store-like tools called ‘package managers’ that centralise and simplify application installation and updation.
 
-**Use Cases**
+## Use cases
 
 Linux is the most popular operating system in the world. Most people interact with linux in the form of the android operating system as it is based on linux. All of the top 500 supercomputers run linux. It is also very common in embedded devices due to its heavy customizability and low resource consumption. More than 90% of all cloud architecture runs on linux, so learning linux is essential for cloud computing, DevOps, backend design and system administration.
 
-**Development and Practices**
+## Development and Practices
 
 The main philosophy of linux development is FOSS. FOSS stands for “Free and Open Source Software”.
  FOSS allows the user to inspect the source code and provides a high level of control of the software's functions compared to proprietary software. The term "free software" does not refer to the monetary cost of the software at all, but rather whether the licence maintains the software user's civil liberties ("free” as in “freedom”).
 
 There are a number of related terms and abbreviations for free and open-source software (FOSS or F/OSS), or free/libre and open-source software (FLOSS or F/LOSS is preferred by FSF over FOSS, while free or free/libre is their preferred term).
 
-
-
-
-
-**Roadmap**
+## Roadmap
 
 1. What is Linux
-
 2. File system hierarchy
-
 3. Standard drive partitioning in linux. file,find,lsblk,df,fdisk/cfdisk commands.
-
 4. Introduction to the terms kernel, shell and terminal
-
 5. Basic linux commands: echo,cat,ls,cp,mv,grep etc
-
 6. When to get root access and use sudo
-
 7. File permissions and the chmod command
-
 8. Basics of vim and ssh for servers
-
 9. Managing user groups
- 
 10. Configuring networks (ethernet and wifi)
-
 11. How to use a package manager
-
 12. How to manage services
 
-**Internet Links**
+## Internet Links
 
-1. <https://www.youtube.com/watch?v=Svno4shb3GY>[ ](https://www.youtube.com/watch?v=Svno4shb3GY)- How to install linux mint
+1. [How to install linux mint](https://www.youtube.com/watch?v=Svno4shb3GY)
+2. [Basic terminal commands](https://www.youtube.com/watch?v=s3ii48qYBxA)
+3. [Basic terminal commands](https://www.youtube.com/watch?v=SkB-eRCzWIU)
+4. [Contains a lot of information not specific to arch linux](https://wiki.archlinux.org/)
+5. [Quick guide on VIM](https://www.youtube.com/watch?v=-txKSRn0qeA)
+6. [Guide on SSH ](https://linuxhint.com/enable-use-ssh-ubuntu/)
+7. [Site to install a virtual machine](https://www.virtualbox.org/)
 
-2. <https://www.youtube.com/watch?v=s3ii48qYBxA>[ ](https://www.youtube.com/watch?v=s3ii48qYBxA)- Basic terminal commands
-
-3. <https://www.youtube.com/watch?v=SkB-eRCzWIU>[ ](https://www.youtube.com/watch?v=SkB-eRCzWIU)- Basic terminal commands
-
-4. <https://wiki.archlinux.org/>[ ](https://wiki.archlinux.org/)(Contains a lot of information not specific to arch linux)
-
-5. <https://www.youtube.com/watch?v=-txKSRn0qeA>[ ](https://www.youtube.com/watch?v=-txKSRn0qeA)- Quick guide on vim
-
-6. <https://linuxhint.com/enable-use-ssh-ubuntu/>[ ](https://linuxhint.com/enable-use-ssh-ubuntu/)- Guide on SSH
-
-7. <https://www.virtualbox.org/>[ ](https://www.virtualbox.org/)- Site to install a virtual machine
-
-
-
-
-**General Mistakes**
-
+## General Mistakes
 1. Running a command you’ve seen on the internet without understanding what it
 
 does first(Eg: `sudo rm -rf /\* or :(){ :|:& };:`)
 
 2. Re-running a command with sudo just because it didn’t work without sudo.
-
 3. Not knowing the package manager on the system you are on.
-
 4. Incorrect system time causing network issues due to SSL certificates not
-
 matching.
 
-**Reference Project**
+## Reference Project
 
 Installation of Arch Linux with a GUI : <https://wiki.archlinux.org/title/Installation_guide>
-
 This is a practical demonstration of the commands learnt so far. Many video guides can be found on youtube as well, but following the wiki is the official way and prepares you more for doing things by following written documentation as a video might not be available for every situation.
 
