@@ -9,13 +9,13 @@ interface ITableProps {
 const TableContent = (props: ITableProps): JSX.Element => {
   return (
     <>
-      <section className="hidden md:grid lg:grid col-start-9 col-span-2 lg:px-4 md:px-0 sm:px-0 font-Plex font-semibold ">
+      <section className="col-span-2 col-start-9 hidden font-Plex font-semibold sm:px-0 md:grid md:px-0 lg:grid lg:px-4 ">
         <section className="flex flex-col justify-start pl-4 text-lg text-white">
           <section className="flex items-center justify-start gap-2">
-            <BiMenuAltLeft className="lg:text-2xl md:text-xl sm:text-lg" />
+            <BiMenuAltLeft className="sm:text-lg md:text-xl lg:text-2xl" />
             In this page
           </section>
-          <section className="h-0.5 w-full my-1 rounded px-2 bg-white" />
+          <section className="my-1 h-0.5 w-full rounded bg-white px-2" />
           <section>
             <section className="list-disc">
               {props?.items.map((ele: any) => (
