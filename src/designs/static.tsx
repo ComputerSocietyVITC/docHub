@@ -15,8 +15,8 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
   return (
     <>
       <Navbar />
-      <section className="lg:hidden md:hidden flex flex-1 justify-between bg-darkshades-active w-full h-8 pl-10">
-        <section className="text-white font-black text-lg">
+      <section className="flex h-8 w-full flex-1 justify-between bg-darkshades-active pl-10 md:hidden lg:hidden">
+        <section className="text-lg font-black text-white">
           In this website
         </section>
         <Modal />
@@ -24,7 +24,7 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
       <ContentComponent>
         <>
           <Sidebar name={pageContext?.title} />
-          <section className="px-2 sm:col-start-1 sm:col-span-1 md:col-start-3 md:col-span-6 lg:col-start-3 lg:col-span-6">
+          <section className="px-2 sm:col-span-1 sm:col-start-1 md:col-span-6 md:col-start-3 lg:col-span-6 lg:col-start-3">
             <h1 className="pt-2 text-4xl font-extrabold text-gray-200">
               {pageContext.title}
             </h1>

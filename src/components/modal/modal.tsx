@@ -14,14 +14,14 @@ interface IButtonProps {
 const ButtonInsideModal = (props: IButtonProps): JSX.Element => {
   return (
     <>
-      <section className="flex flex-1 justify-between px-2 items-center">
-        <section className="flex justify-start items-center">
+      <section className="flex flex-1 items-center justify-between px-2">
+        <section className="flex items-center justify-start">
           <BiRightArrow className="text-white" />
-          <li className="text-white font-normal list-none text-lg">
+          <li className="list-none text-lg font-normal text-white">
             {props?.name}
           </li>
         </section>
-        <section className="text-white text-md">
+        <section className="text-md text-white">
           <a href={`/docs${props?.slug}`}>
             <IoOpenOutline />
           </a>
@@ -63,14 +63,18 @@ const Modal: React.FC = (): JSX.Element => {
         <button
           type="button"
           onClick={openModal}
-          className="m-2 px-2 py-1 text-2xl rounded font-medium text-white"
+          className="m-2 rounded px-2 py-1 text-2xl font-medium text-white"
         >
           <AiFillCaretDown />
         </button>
       </section>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="section" className="relative z-10" onClose={closeModal}>
+        <Dialog
+          as="section"
+          className="relative z-10 max-h-screen"
+          onClose={closeModal}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -95,10 +99,10 @@ const Modal: React.FC = (): JSX.Element => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-darkshades-active p-6 text-left align-middle shadow-xl transition-all">
-                  <section className="flex flex-1 justify-between items-center">
+                  <section className="flex flex-1 items-center justify-between">
                     <Dialog.Title
                       as="h3"
-                      className="text-lg font-medium font-Plex leading-6 text-primary"
+                      className="font-Plex text-lg font-medium leading-6 text-primary"
                     >
                       List of available docs
                     </Dialog.Title>
@@ -113,9 +117,9 @@ const Modal: React.FC = (): JSX.Element => {
                     </section>
                   </section>
                   <section className="m-2">
-                    <p className="bg-gray-500 h-0.5 w-full rounded-md" />
+                    <p className="h-0.5 w-full rounded-md bg-gray-500" />
                   </section>
-                  <section className="text-darkshades-active text-lg font-normal font-Plex">
+                  <section className="font-Plex text-lg font-normal text-darkshades-active">
                     {data.map((ele: any): JSX.Element => {
                       return (
                         <ButtonInsideModal

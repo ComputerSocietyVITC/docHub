@@ -57,6 +57,10 @@ code {
   font-size: small;
 }
 
-a:hover{
+a:hover {
+  text-decoration: double;
+}
+
+a{
   text-decoration: underline;
 }
