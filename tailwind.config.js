@@ -15,11 +15,15 @@ module.exports = {
       },
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
-        Monty: ["Montserrat", "sans-serif"],
+        monty: ["Montserrat", "sans-serif"],
         Plex: ["IBM Plex Sans", "sans-serif"],
       },
       colors: {
         primary: "#31CE9F",
+        sideColors: {
+          1: "#00B3A2",
+          3: "#00989B",
+        },
         darkshades: {
           active: "#202020",
           // active: "#0f0f0f",
