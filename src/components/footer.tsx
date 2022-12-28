@@ -102,7 +102,7 @@ const Footer = (): JSX.Element => {
             </section>
           </section>
         </section>
-        <section className="sm:text-md col-span-full flex justify-center px-2 font-monty text-lg font-light text-white">
+        <section className="sm:text-md col-span-full flex justify-center px-2 font-Monty text-lg font-light text-white">
           IEEE Computer Society VIT Chennai © {new Date().getFullYear()}
         </section>
       </footer>
