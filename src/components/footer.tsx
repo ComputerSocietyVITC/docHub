@@ -89,7 +89,7 @@ const Footer = (): JSX.Element => {
           </section>
           
         </section>
-        <section className="font-semibold gradient-navbar col-span-full flex justify-center px-2 py-1 font-Monty text-md text-white my-0 sm:text-sm rounded-b-md">
+        <section className="font-semibold gradient-navbar col-span-full flex justify-center px-2 py-1 font-Monty text-md text-white my-0 sm:text-xs rounded-b-md">
           IEEE Computer Society VIT Chennai © {new Date().getFullYear()}
         </section>
       </footer>
