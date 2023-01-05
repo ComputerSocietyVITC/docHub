@@ -25,7 +25,7 @@ const IconKnowMore = (props: KnowMoreProps) => {
     <>
       <a href={props?.link}>
         <section className="flex items-center justify-start gap-2 py-1 text-lg font-thin text-white">
-          <section className="hover:text-xl hover:text-white hover:font-normal text-gray-300">{props?.name}</section>
+          <section className="hover:text-xl hover:text-gray-200 hover:font-normal text-gray-300">{props?.name}</section>
         </section>
       </a>
     </>
@@ -36,7 +36,7 @@ const Footer = (): JSX.Element => {
   return (
     <>
       <footer className="border border-t-[2px] border-b-0 border-r-0 border-l-0 border-textcolors-boundary bg-darkshades-passive py-2 font-Plex content-center">
-        <section className="p-7 flex flex-row">
+        <section className="p-7 flex flex-row items-center">
           <section className="md:px-4 lg:pl-7 lg:basis-1/3">
             <StaticImage
               src="../images/banner-logo.png"
