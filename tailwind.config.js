@@ -17,15 +17,12 @@ module.exports = {
         Inter: ["Inter", "sans-serif"],
         monty: ["Montserrat", "sans-serif"],
         Plex: ["IBM Plex Sans", "sans-serif"],
-        'text': ['Montserrat',],
       },
       colors: {
         primary: "#31CE9F",
         sideColors: {
           1: "#00B3A2",
           3: "#00989B",
-          'back': '#151515',
-          'tx': '#FFFFFF',
         },
         darkshades: {
           active: "#202020",
@@ -45,20 +42,9 @@ module.exports = {
         },
       },
       fontSize: {
-        '2xl': ['68.81px', {
-         lineHeight: '84px',
-         lineHeight: '100%',
-         lineSpacing: '-8.5%',
-         fontWeight: '700',
-       }],
-       '3xl': ['23.36px', {
-         lineHeight: '28px',
-         lineHeight: '100%',
-         letterSpacing: '-8.5%',
-         fontWeight: '300',
-       }]
      },
      spacing: {
+      '84':'84px',
       '737': '737px',
       '151': '151px',
       '628.59': '628.59px',

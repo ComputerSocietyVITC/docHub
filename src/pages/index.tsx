@@ -16,6 +16,7 @@ import { SlDocs } from "react-icons/sl";
 import "../../css/gradients.css";
 import { Footer } from "../components/footer";
 import Navbar from "../components/navbar";
+import Hero from "../components/hero"
 
 const SEO = () => {
   const data = useStaticQuery(graphql`
@@ -81,21 +82,9 @@ const IndexPage: React.FC<PageProps> = () => {
       <section className="bg-darkshades-passive">
         <section className="max-w-screen">
           <Navbar />
+          <Hero />
           <section className="sm:flex-col md:grid md:grid-cols-1 lg:grid lg:grid-cols-6 lg:gap-8 lg:pl-12 sm:px-4 md:px-8">
             <section className="mt-16 mx-8 sm:col-span-full md:col-start-1lg:col-start-1 lg:col-span-4">
-              <section className="text-white text-6xl font-bold flex justify-start py-1">
-                IEEE Computer Society
-              </section>
-              <section className="text-white text-5xl font-bold flex justify-start py-1">
-                VIT Chennai
-              </section>
-              <section className="text-white text-xl font-normal my-8">
-                The starting point for your tech journey, Get started and
-                explore you favorite domain in tech. Whether you're just
-                starting out or you're an experienced developer looking to take
-                your skills to the next level, our documentation has something
-                for everyone.
-              </section>
               <section className="hover:translate-x-4 hover:underline w-fit text-2xl py-2 text-white font-bold">
                 <a href="/docs">Explore →</a>
               </section>
