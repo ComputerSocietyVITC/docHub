@@ -33,7 +33,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       component: markDownTemplate,
       context: {
         author: node.frontmatter.author,
-        linkedin = node.frontmatter.linkedin,
+        linkedin: node.frontmatter.linkedin,
         tableOfContents: node.tableOfContents,
         title: node.frontmatter.title,
         pagePath: node.frontmatter.slug,
