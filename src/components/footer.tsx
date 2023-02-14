@@ -14,7 +14,7 @@ interface KnowMoreProps {
 
 const SocialMediaIcon = (props: ISocialMediaInterface): JSX.Element => {
   return (
-    <a href={props?.link}>
+    <a href={props?.link} target="_blank">
       <section className="text-3xl text-white">{props?.icon}</section>
     </a>
   );

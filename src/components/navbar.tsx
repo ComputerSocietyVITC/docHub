@@ -29,7 +29,7 @@ const Navbar = (): JSX.Element => {
           />
           <SocialMediaIcon
             icon={<AiOutlineInstagram />}
-            link={"https://github.com/comsoc.vitcc"}
+            link={"https://instagram.com/comsoc.vitcc"}
           />
         </section>
       </nav>
