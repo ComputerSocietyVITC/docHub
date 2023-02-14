@@ -28,9 +28,11 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
             <h1 className="pt-2 text-4xl font-extrabold text-gray-200">
               {pageContext.title}
             </h1>
-            <h2 className="font-Plex text-lg font-bold text-primary">
+            <h2  className="font-Plex text-lg font-bold text-primary">
+              <a href={pageContext.linkedin}>
               Authored by: {pageContext.author}
-            </h2>
+              </a>
+                </h2>
             <Content />
           </section>
           <TableContent items={pageContext?.tableOfContents.items} />
