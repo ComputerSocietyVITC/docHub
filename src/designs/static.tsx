@@ -32,8 +32,7 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
               <a href={pageContext.linkedin} target="_blank" rel="noopener noreferrer">
               Authored by: {pageContext.author}
               </a>
-            </h2>
-            
+            </h2>  
             <div id="con">
             <Content />
             </div>
@@ -41,11 +40,8 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
           <TableContent items={pageContext?.tableOfContents.items} />
         </>
       </ContentComponent>
-         
       <Footer />
-      
     </>
-    
   );
 };
 
@@ -61,4 +57,3 @@ export const Head = ({ pageContext }: any) => {
     </>
   );
 };
-
