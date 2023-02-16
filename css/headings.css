@@ -60,10 +60,7 @@ code {
 
 div#con a{
   text-decoration-line: underline;
-}
-
-div#con a:visited {
-  color: green;
+  color: #31ce9f
 }
 
 div#con a:hover {
