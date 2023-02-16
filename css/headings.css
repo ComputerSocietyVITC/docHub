@@ -57,6 +57,21 @@ code {
   font-size: small;
 }
 
-a:hover {
-  text-decoration: underline;
+
+div#con a{
+  text-decoration-line: underline;
+  color: #31ce9f
 }
+
+div#con a:hover {
+  color: hotpink;
+}
+
+div#con a:active {
+  color: blue;
+}
+
+
+
+
+
