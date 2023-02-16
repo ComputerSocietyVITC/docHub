@@ -33,15 +33,19 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
               Authored by: {pageContext.author}
               </a>
             </h2>
+            
             <div id="con">
             <Content />
             </div>
-          </section>
+            </section>
           <TableContent items={pageContext?.tableOfContents.items} />
         </>
       </ContentComponent>
+         
       <Footer />
+      
     </>
+    
   );
 };
 
@@ -50,7 +54,11 @@ export default TemplateComponent;
 export const Head = ({ pageContext }: any) => {
   return (
     <>
+      <script>
+      document.querySelectorAll("div #con a").forEach((item) =&gt; item.setAttribute('target', '_blank'))
+        </script>
       <title>{pageContext?.title}</title>
     </>
   );
 };
+
