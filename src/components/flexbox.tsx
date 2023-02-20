@@ -11,7 +11,7 @@ const Flexi = (): JSX.Element => {
                 <p className="my-[-2%] py-[-5%] text-[5vw] text-center">explore</p>
                 <p className="my-[-25%] opacity-70 text-[5vw] text-center">explore</p>
                 <p className="my-[-25%] opacity-40 text-[5vw] text-center">explore</p>
-                <p className="opacity-20 text-[5vw]">explore</p>
+                <p className="mt-[-10%] opacity-20 text-[5vw]">explore</p>
             </button>
             <button onClick={() => navigate('/')} className="text-white rounded-[10px] w-1/3 bg-sideColors-1 hover:scale-110 hover:shadow-lg hover:shadow-blue-700 px-[5%] py-[0.2%]" type="button">
                 <p className="text-left font-semibold text-[5vw]">What's This About?</p>
