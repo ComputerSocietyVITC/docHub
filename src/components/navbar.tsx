@@ -1,10 +1,13 @@
 import * as React from "react";
 import "../../css/gradients.css";
-import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-import { SocialMediaIcon } from "./footer";
+import { AiFillGithub, AiOutlineInstagram, AiOutlineSearch } from "react-icons/ai";
+import { SocialMediaIcon, SearchIcon } from "./footer";
 import { StaticImage } from "gatsby-plugin-image";
+import { SearchBar, PopUp} from "./searchbar";
+import SearchPopUp from "./popup";
 
 const Navbar = (): JSX.Element => {
+  const [ButtonPopUp, setButtonPopUp]= React.useState(false);
   return (
     <>
       <nav className="bg-black h-18 items-center grid grid-cols-3">
@@ -21,7 +24,13 @@ const Navbar = (): JSX.Element => {
           <a className='text-9xl' href="/">
             <p>docHub</p></a>
         </section>
-        <section className="flex tems-center justify-self-end">
+        <section className="flex items-center justify-self-end">
+          <section>
+          <button onClick={() => setButtonPopUp(true)}>
+          <SearchIcon icon={<AiOutlineSearch />} />
+          </button>
+          <SearchPopUp Button={ButtonPopUp} setButton={setButtonPopUp}/>
+          </section>
           <SocialMediaIcon
             icon={<AiFillGithub />}
             link={"https://github.com/ComputerSocietyVITC"}
@@ -36,5 +45,5 @@ const Navbar = (): JSX.Element => {
     </>
   );
 };
-
+//<SearchBar text={String.fromCodePoint(0x1F50E)+"Search"} />
 export default Navbar;

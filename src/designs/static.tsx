@@ -8,6 +8,7 @@ import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar/sidebar";
 import TableContent from "../components/sidebar/tableOfContent";
 import { useMDX } from "../utils/hooks";
+import { new_tab } from "../scripts/scripts";
 
 const TemplateComponent = ({ pageContext }: any): JSX.Element => {
   const data = useMDX(pageContext.body);
@@ -51,7 +52,7 @@ export const Head = ({ pageContext }: any) => {
   return (
     <>
       <script>
-      document.querySelectorAll("div #con a").forEach((item) =&gt; item.setAttribute('target', '_blank'))
+      {new_tab(document)}
         </script>
       <title>{pageContext?.title}</title>
     </>

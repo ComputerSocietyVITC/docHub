@@ -16,6 +16,7 @@ import { SlDocs } from "react-icons/sl";
 import "../../css/gradients.css";
 import { Footer } from "../components/footer";
 import Navbar from "../components/navbar";
+import image from "../images/banner-image.png";
 
 const SEO = () => {
   const data = useStaticQuery(graphql`
@@ -87,7 +88,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 IEEE Computer Society
               </section>
               <section className="text-white text-5xl font-bold flex justify-start py-1">
-                VIT Chennai
+                VIT Chennai's Docs
               </section>
               <section className="text-white text-xl font-normal my-8">
                 The starting point for your tech journey, Get started and
@@ -101,8 +102,8 @@ const IndexPage: React.FC<PageProps> = () => {
               </section>
             </section>
             <section className="md:col-start-1 md:col-span-full lg:col-start-1 lg:col-span-4">
-              <StaticImage
-                src="../images/banner-image.png"
+              <img id="image"
+                src={image}
                 alt="banner image"
                 className="mt-12 m-8 rounded-3xl hover:shadow-lg hover:shadow-blue-500"
               />
