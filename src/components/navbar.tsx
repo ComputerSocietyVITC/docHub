@@ -3,7 +3,6 @@ import "../../css/gradients.css";
 import { AiFillGithub, AiOutlineInstagram, AiOutlineSearch } from "react-icons/ai";
 import { SocialMediaIcon, SearchIcon } from "./footer";
 import { StaticImage } from "gatsby-plugin-image";
-import { SearchBar, PopUp } from "./searchbar/searchbar";
 import SearchPopUp from "./searchbar/popup";
 
 const Navbar = (): JSX.Element => {
@@ -21,8 +20,8 @@ const Navbar = (): JSX.Element => {
           </a>
         </section>
         <section className="font-Plex font-black m-2 text-white justify-self-center">
-          <a className='text-9xl' href="/">
-            <p>docHub</p></a>
+          <a className='text-4xl' href="/">
+            docHub</a>
         </section>
         <section className="flex items-center justify-self-end">
           <section>
@@ -45,5 +44,4 @@ const Navbar = (): JSX.Element => {
     </>
   );
 };
-//<SearchBar text={String.fromCodePoint(0x1F50E)+"Search"} />
 export default Navbar;
