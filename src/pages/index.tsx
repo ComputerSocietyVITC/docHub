@@ -18,6 +18,7 @@ import { Footer } from "../components/footer";
 import Navbar from "../components/navbar";
 import image from "../images/banner-image.png";
 
+
 const SEO = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -171,14 +172,6 @@ const IndexPage: React.FC<PageProps> = () => {
               </section>
             </section>
             </section>
-            <section className="mt-16 mx-8 sm:col-span-full md:col-start-1lg:col-start-1 lg:col-span-4 justify items-center items-center grid grid-cols-2">
-              <section className="text-white text-2xl font-normal my-8 ">
-                Interested to provide content?
-              </section>
-              <section className=" hover:underline text-2xl text-white font-bold justify-self-end">
-                <a href='/submit'>Submit Content →</a>
-              </section>
-          </section>
           <Footer />
         </section>
       </section>
