@@ -3,7 +3,7 @@ import "../../css/gradients.css";
 import { AiFillGithub, AiOutlineInstagram, AiOutlineSearch } from "react-icons/ai";
 import { SocialMediaIcon, SearchIcon } from "./footer";
 import { StaticImage } from "gatsby-plugin-image";
-import { SearchBar, PopUp} from "./searchbar";
+import { SearchBar, PopUp } from "./searchbar";
 import SearchPopUp from "./popup";
 
 const Navbar = (): JSX.Element => {
