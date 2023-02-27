@@ -3,8 +3,8 @@ import "../../css/gradients.css";
 import { AiFillGithub, AiOutlineInstagram, AiOutlineSearch } from "react-icons/ai";
 import { SocialMediaIcon, SearchIcon } from "./footer";
 import { StaticImage } from "gatsby-plugin-image";
-import { SearchBar, PopUp } from "./searchbar";
-import SearchPopUp from "./popup";
+import { SearchBar, PopUp } from "./searchbar/searchbar";
+import SearchPopUp from "./searchbar/popup";
 
 const Navbar = (): JSX.Element => {
   const [ButtonPopUp, setButtonPopUp]= React.useState(false);

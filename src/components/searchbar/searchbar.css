@@ -1,14 +1,15 @@
 .searchInputs {
-    margin-top: 5px;
     display: flex;
     color:rgb(255, 255, 255)
 }
 
 .search input {
     background-color: rgb(82, 82, 82);
-    font-size: 15px;
-    height: 30px;
+    font-size: 30px;
+    height: 60px;
     width: 500px;
+    border-radius: 25px;
+    text-indent: 20px;
 }
 
 input:focus {

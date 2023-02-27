@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import { graphql, useStaticQuery } from "gatsby";
 import './searchbar.css'
-import { SearchIcon } from "./footer";
+import { SearchIcon } from "../footer";
 import {  RiCloseFill } from "react-icons/ri";
 
 
@@ -42,7 +42,7 @@ const SearchBar = (placeholder: any): JSX.Element => {
     return(<>
         <div className='search'>
             <section className='searchInputs'>
-                <input type='text' placeholder={placeholder?.text} value={wordEntered} onChange={handleFilter}/>
+                <input type='text' placeholder={'  '+placeholder?.text} value={wordEntered} onChange={handleFilter}/>
             </section>
             <section id='list' className="dataResult rounded-1xl">
                 {filteredData.map((values: any) => {
