@@ -13,17 +13,18 @@ const SearchBar = (placeholder: any): JSX.Element => {
             slug
             title
           }
+          body
         }
       }
     }
   `);
-  const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
+  const [filteredData, setFilteredData] = useState<Array<string>>([]);
+  const [wordEntered, setWordEntered] = useState<string>("");
   const handleFilter = (event: any) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = data.allMdx.nodes.filter((value: any) => {
-      return value?.frontmatter.title
+      return String(value?.body)
         .toLowerCase()
         .includes(searchWord.toLowerCase());
     });
@@ -35,10 +36,6 @@ const SearchBar = (placeholder: any): JSX.Element => {
     }
   };
 
-  const clearInput = () => {
-    setFilteredData([]);
-    setWordEntered("");
-  };
 
   return (
     <>
