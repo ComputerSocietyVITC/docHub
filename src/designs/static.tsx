@@ -30,14 +30,18 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
               {pageContext.title}
             </h1>
             <h2 className="font-Plex text-lg font-bold text-primary">
-              <a href={pageContext.linkedin} target="_blank" rel="noopener noreferrer">
-              Authored by: {pageContext.author}
+              <a
+                href={pageContext.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Authored by: {pageContext.author}
               </a>
-            </h2>  
+            </h2>
             <div id="con">
-            <Content />
+              <Content />
             </div>
-            </section>
+          </section>
           <TableContent items={pageContext?.tableOfContents.items} />
         </>
       </ContentComponent>
@@ -51,9 +55,7 @@ export default TemplateComponent;
 export const Head = ({ pageContext }: any) => {
   return (
     <>
-      <script>
-      {new_tab(document)}
-        </script>
+      <script>{new_tab(document)}</script>
       <title>{pageContext?.title}</title>
     </>
   );

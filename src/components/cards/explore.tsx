@@ -2,7 +2,7 @@ import * as React from "react";
 import "../../../css/gradients.css";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 
-const AboutBox = (): JSX.Element => {
+const ExploreBox = (): JSX.Element => {
   return (
     <>
       <section className="bg-sideColors-3 rounded-2xl font-monty flex flex-col flex-auto justify-start lg:text-8xl md:text-4xl sm:text-2xl px-2 py-6 m-2 w-5/12">
@@ -24,4 +24,4 @@ const AboutBox = (): JSX.Element => {
   );
 };
 
-export default AboutBox;
+export default ExploreBox;
