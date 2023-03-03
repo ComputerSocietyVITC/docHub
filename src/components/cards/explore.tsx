@@ -5,19 +5,19 @@ import { AiOutlineDoubleRight } from "react-icons/ai";
 const AboutBox = (): JSX.Element => {
   return (
     <>
-      <section className="bg-sideColors-3 rounded-2xl font-monty flex flex-col flex-auto justify-start lg:text-8xl md:text-4xl sm:text-2xl px-2 py-6 m-2 w-5/12">
+      <section className="m-2 flex w-5/12 flex-auto flex-col justify-start rounded-2xl bg-sideColors-3 px-2 py-6 font-monty sm:text-2xl md:text-4xl lg:text-8xl">
         <section className="font-bold text-white opacity-100">deep</section>
-        <section className="font-bold outline-text text-white opacity-80">
+        <section className="outline-text font-bold text-white opacity-80">
           dive
         </section>
-        <section className="font-bold outline-text text-white opacity-60 flex justify-between">
+        <section className="outline-text flex justify-between font-bold text-white opacity-60">
           into
         </section>
-        <section className="font-bold outline-text text-white opacity-40">
+        <section className="outline-text font-bold text-white opacity-40">
           learning
         </section>
         <section className="flex justify-end">
-          <AiOutlineDoubleRight className="lg:text-4xl md:text-3xl sm:text-2xl text-slate-300 -translate-x-4 hover:text-white hover:translate-x-0" />
+          <AiOutlineDoubleRight className="-translate-x-4 text-slate-300 hover:translate-x-0 hover:text-white sm:text-2xl md:text-3xl lg:text-4xl" />
         </section>
       </section>
     </>
