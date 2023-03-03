@@ -58,16 +58,16 @@ code {
 }
 
 
-div#con a{
+div#contents a{
   text-decoration-line: underline;
   color: #31ce9f
 }
 
-div#con a:hover {
-  color: hotpink;
+div#contents a:hover {
+  color: rgb(105, 255, 185);
 }
 
-div#con a:active {
+div#contents a:active {
   color: blue;
 }
 

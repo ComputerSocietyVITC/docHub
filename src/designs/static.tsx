@@ -33,7 +33,9 @@ const TemplateComponent = ({ pageContext }: any): JSX.Element => {
                 Authored by: {pageContext.author}
               </a>
             </h2>
-            <Content />
+            <div id="contents">
+              <Content />
+            </div>
           </section>
           <TableContent items={pageContext?.tableOfContents.items} />
         </>
