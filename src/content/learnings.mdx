@@ -4,23 +4,14 @@ author: Abhijith Ganesh
 linkedin: https://linkedin.com/in/AbhijithGanesh14
 priority: 10
 ---
-
-# Things to learn from Microsoft Reactor - Bengaluru 
-
-<Banglore Research Office, Microsoft>
-<3 March 17:32>
-
 ## Table of Contents
  - ### Opening from Kamal Shree (Dev Advocate) about building apps for Microsoft Teams
  - ### Accessing Graphs accurately by Nanddeep Nachan
- - ### Implementing access control at an organizational level.
- 
+ - ### Implementing access control at an organizational level. - Vinodha and Narsima Perumal
+ - ### Leveraging newer UI elements in Teams - Shruhsti Sinha
 
-## Opening address
-- M365 Team advocacy
-- Teams Elite
 
-### Teams Elite
+## Teams Elite
  - BiWeekly series
  - Microsoft Graph
  - P.S: Scanner apps for PDF conversion
@@ -29,7 +20,7 @@ priority: 10
  - MVP interaction ( Focus this for our freshers )
  - Show and tell your projects
  
-### Learn Path and Graph
+## Learn Path and Graph
  - VS Code
  - Same integration that we've already seen (we already have access to this) 
  - We need to work around tenant account access for this!
@@ -39,12 +30,12 @@ priority: 10
     - TimeTable synchronizer
     - CMS
 
-#### Links to Learn Path
+### Links to Learn Path
  - YouTube videos featuring us more!
  - [Learn Path](https://aka.ms/M365-teams-toolkit-vsc)
  - [GitHub Pages of teams](microsoft.github.io/app-camp)
 
-#### Hackathon with Microsoft Graph and .NET
+### Hackathon with Microsoft Graph and .NET
 
 15 days graph hackathon
 <Attach image here>
@@ -52,7 +43,7 @@ priority: 10
 < - Talk to Ganesh Viswanathan about the hackathon as well >
 
 
-#### Microsoft Graph Proxy
+### Microsoft Graph Proxy
 
  A new in-house CLI tool developed to solve the developer needs of Graph. it is simulated in PS but works on ZSH. It is an API testing tool for MS Graph
  
@@ -61,11 +52,11 @@ priority: 10
  Microsoft Graph Developer Proxy is a command line tool that simulates real world behaviours of Microsoft Graph and other APIs, locally
  
  
-#### App development support
+### App development support
 [link](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0ktYAUCTtVIvJkJdFsfkalUOFA1WlBJMVJURFBXUkk1SDlPN08zMEJEWC4u)
 
 
-### Getting our basics right with Graph
+## Getting our basics right with Graph
 
  > By [Nanddeep Nacchan](https://www.linkedin.com/in/nanddeepnachan/)
  
@@ -89,7 +80,7 @@ You can freely test all HTTP methods with tools like:
  
  The API will allow you to access with an auth token/access token. All end points are OpenAPI compliant. Since they're HTTP compliant, you can directly cURL them. Also there are UI components for services like OneDrive.
  
-#### Permissions that are required by the app
+### Permissions that are required by the app
 
 
 MS has two methods of access, they are Delegated access and App-Only acesss. 
@@ -99,22 +90,35 @@ MS has two methods of access, they are Delegated access and App-Only acesss.
 
 User and App share privileges in the first approach, Apps inherit the permission from users in the first case. Whereas the same access control is implemented by the app itself in the second case. The app applies the permissions granted to it and accesses the required resources.
 
-#### Closing Note
+### Closing Note
 - **Handle permissions well, too much privilege can cause too much damage**
 - **Donot mixup the two approaches, either go kernel level or go user level** (Operating Systems reference guys 😎)
 - **Handle responses according to the case**
 
 
-### Working with tenant IDs
+## Working with tenant IDs
 
-By [Vinodha]() and [Narasimha Perumal](https://www.linkedin.com/in/narasimaperumal)
+> By [Vinodha]() and [Narasimha Perumal](https://www.linkedin.com/in/narasimaperumal)
 
 
-#### Public and Private Channels
+### Public and Private Channels
 
 - Access control was implemented by the developers working on teams to avoid multiple redundant teams (Multiple teams with similar members)
 - To provide third-party access to the organizational resources, shared channel was implemented
+- They're internally done by Azure AD connections and I think as Computer Society developers, we need to use this to our peak advantage
 
 Basically this is nothing big per-se, it just explains how access control is implemented.
 
+ 
+## How to leverage Microsoft Teams for a better in meeting app experince
+
+> By [Shrushti Shah](https://linkedin.com/in/)
+
+- How to improvize your UX ? 
+
+- You can add extra widges using Polls, YouTube, TPIs, etc.
+- As an example: You can do a SCRUM discussion for the previous sprint.
+- In meeting dialogue and side panel tabs are two available user elements that can be engaged.
+- Sharing a meeting stage:
+ - iframes can be shared
 
