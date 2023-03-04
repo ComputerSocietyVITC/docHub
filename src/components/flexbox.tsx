@@ -18,7 +18,7 @@ const Flexi = (): JSX.Element => {
                 <p className="text-right px-[-40%] text-[5vw]">&#8690;</p>
             </button>
             <span className="flex flex-col m-0 gap-[1.5vw] w-1/3 text-center">
-                <button onClick={() => navigate('/docs')} className="text-white border text-[2.1vw] rounded-[30px] hover:scale-110 py-[4.1vw] px-[4vw] border-white hover:shadow-lg hover:shadow-green-500" type="button">Read Docs</button>
+                <a href="/docs" className="text-white border text-[2.1vw] rounded-[30px] hover:scale-110 py-[4.1vw] px-[4vw] border-white hover:shadow-lg hover:shadow-green-500">Read Docs</a>
                 <button onClick={() => navigate('/')} className="text-white bg-sideColors-1 rounded-[30px] hover:scale-110 hover:shadow-lg hover:shadow-blue-700 py-[5.1vw] text-[2.1vw] m-0" type="button">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, natus?</button>
             </span>
         </div>
