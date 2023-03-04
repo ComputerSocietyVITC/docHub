@@ -32,13 +32,12 @@ const Flexi = (): JSX.Element => {
             <p className="px-[-40%] text-right text-[5vw]">&#8690;</p>
           </button>
           <span className="m-0 flex w-1/3 flex-col gap-[1.5vw] text-center">
-            <button
-              onClick={() => navigate("/docs")}
+            <a
+              href="/docs"
               className="rounded-[30px] border border-white py-[4.1vw] px-[4vw] text-[2.1vw] text-white hover:scale-110 hover:shadow-lg hover:shadow-green-500"
-              type="button"
             >
               Read Docs
-            </button>
+            </a>
             <button
               onClick={() => navigate("/")}
               className="m-0 rounded-[30px] bg-sideColors-1 py-[5.1vw] text-[2.1vw] text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-700"
