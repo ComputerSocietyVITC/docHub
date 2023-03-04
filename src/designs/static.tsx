@@ -50,10 +50,6 @@ export default TemplateComponent;
 export const Head = ({ pageContext }: any) => {
   return (
     <>
-      <script>
-        document.querySelectorAll("div #contents a").forEach((item) =&gt;
-        item.setAttribute('target', '_blank'))
-      </script>
       <title>{pageContext?.title}</title>
     </>
   );
