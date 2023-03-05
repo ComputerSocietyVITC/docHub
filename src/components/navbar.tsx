@@ -28,7 +28,7 @@ const Navbar = (): JSX.Element => {
             docHub
           </a>
         </section>
-        <section className="tems-center flex justify-self-end">
+        <section className="items-center flex justify-self-end">
         <section>
             <button onClick={() => setButtonPopUp(true)}>
               <SearchIcon icon={<AiOutlineSearch />} />
