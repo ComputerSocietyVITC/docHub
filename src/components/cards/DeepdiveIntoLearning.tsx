@@ -2,15 +2,15 @@ import * as React from "react";
 import "../../../css/gradients.css";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 
-const AboutBox = (): JSX.Element => {
+const  DDILBox = (): JSX.Element => {
   return (
     <>
-      <section className="m-2 flex w-5/12 flex-auto flex-col justify-start rounded-2xl bg-sideColors-3 px-2 py-6 font-monty sm:text-2xl md:text-4xl lg:text-8xl">
-        <section className="font-bold text-white opacity-100">deep</section>
-        <section className="outline-text font-bold text-white opacity-80">
+      <section className="flex flex-auto flex-col justify-start rounded-2xl bg-sideColors-3 px-12 py-6 font-monty sm:text-2xl md:text-4xl lg:text-8xl">
+        <section className="flex font-bold text-white opacity-100">deep</section>
+        <section className="outline-text flex font-bold text-white opacity-80">
           dive
         </section>
-        <section className="outline-text flex justify-between font-bold text-white opacity-60">
+        <section className="outline-text flex font-bold text-white opacity-60">
           into
         </section>
         <section className="outline-text font-bold text-white opacity-40">
@@ -24,4 +24,4 @@ const AboutBox = (): JSX.Element => {
   );
 };
 
-export default AboutBox;
+export default DDILBox;

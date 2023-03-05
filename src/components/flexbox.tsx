@@ -1,6 +1,9 @@
 import * as React from "react";
 import { navigate } from "gatsby";
 import "../../css/base.css";
+import DDILBox from "./cards/DeepdiveIntoLearning";
+import AboutBox from "./cards/about";
+
 
 const Flexi = (): JSX.Element => {
   return (
@@ -23,13 +26,10 @@ const Flexi = (): JSX.Element => {
           </button>
           <button
             onClick={() => navigate("/docs")}
-            className="w-1/3 rounded-[30px] bg-sideColors-1 px-[5%] py-[0.2%] text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-700"
+            className="rounded-[30px] bg-sideColors-1 px-[5%] py-[6.5%] text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-700"
             type="button"
           >
-            <p className="text-left text-[5vw] font-semibold">
-              What's This About?
-            </p>
-            <p className="px-[-40%] text-right text-[5vw]">&#8690;</p>
+            <AboutBox/>
           </button>
           <span className="m-0 flex w-1/3 flex-col gap-[1.5vw] text-center">
             <a
@@ -51,19 +51,17 @@ const Flexi = (): JSX.Element => {
         <div className="mx-[2.5vw] mt-[2vw] mb-[1vw] flex flex-row flex-nowrap items-end justify-between gap-[2.4vw]">
           <button
             onClick={() => navigate("/")}
-            className="w-1/2.3 rounded-[30px] bg-sideColors-1 px-[14.9vw] py-[2.5vw] text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-700"
+            className="w-1/2.3 rounded-[30px] bg-sideColors-1 px-[14.9vw] py-[8vw] text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-700"
             type="button"
           >
             <p className="text-[3.2vw]">Add your content with MDX</p>
           </button>
           <button
             onClick={() => navigate("/docs")}
-            className="w-1/2.3 rounded-[30px] bg-sideColors-1 px-[14.9vw] py-[2.6vw] text-[4.2vw] text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-700"
+            className="w-1/2.3 rounded-[30px] hover:scale-110 hover:shadow-lg hover:shadow-blue-700"
             type="button"
           >
-            <p className="text-left text-[3.2vw]">
-              <strong>Deep</strong> dive into learning
-            </p>
+            <DDILBox/>
           </button>
         </div>
       </div>
