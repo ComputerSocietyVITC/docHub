@@ -1,4 +1,4 @@
-import React, { Attributes, HTMLAttributes, useState } from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import "../../../css/searchbar.css";
 import { SearchIcon } from "../footer";
