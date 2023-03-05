@@ -7,6 +7,10 @@ interface ISocialMediaInterface {
   link: string;
 }
 
+interface SearchIconInterface {
+  icon: JSX.Element;
+}
+
 interface KnowMoreProps {
   name: string;
   link: string;
@@ -18,6 +22,10 @@ const SocialMediaIcon = (props: ISocialMediaInterface): JSX.Element => {
       <section className="text-3xl text-white">{props?.icon}</section>
     </a>
   );
+};
+
+const SearchIcon = (props: SearchIconInterface): JSX.Element => {
+  return <section className="text-3xl text-white">{props?.icon}</section>;
 };
 
 const IconKnowMore = (props: KnowMoreProps) => {
@@ -101,4 +109,4 @@ const Footer = (): JSX.Element => {
   );
 };
 
-export { Footer, ISocialMediaInterface, SocialMediaIcon };
+export { Footer, ISocialMediaInterface, SocialMediaIcon, SearchIcon };

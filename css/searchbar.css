@@ -1,0 +1,54 @@
+.searchInputs {
+  display: flex;
+  color: rgb(255, 255, 255);
+}
+
+.search input {
+  background-color: rgb(82, 82, 82);
+  font-size: 30px;
+  height: 60px;
+  width: 500px;
+  border-radius: 25px;
+  text-indent: 20px;
+}
+
+input:focus {
+  outline: black;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: block;
+  color: rgb(255, 255, 255);
+}
+
+.dataResult .dataItem {
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  color: black;
+}
+
+.dataItem p {
+  margin-left: 5px;
+  color: #31ce9f;
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.workspace {
+  overflow: auto;
+  height: 80%;
+}
+

@@ -1,11 +1,16 @@
 import * as React from "react";
 import "../../css/gradients.css";
-import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-import "../../css/gradients.css";
-import { SocialMediaIcon } from "./footer";
+import {
+  AiFillGithub,
+  AiOutlineInstagram,
+  AiOutlineSearch,
+} from "react-icons/ai";
+import { SocialMediaIcon, SearchIcon } from "./footer";
 import { StaticImage } from "gatsby-plugin-image";
+import SearchPopUp from "./searchbar/popup";
 
 const Navbar = (): JSX.Element => {
+  const [ButtonPopUp, setButtonPopUp] = React.useState(false);
   return (
     <>
       <nav className="h-18 grid grid-cols-3 items-center bg-darkshades-passive">
@@ -24,6 +29,12 @@ const Navbar = (): JSX.Element => {
           </a>
         </section>
         <section className="tems-center flex justify-self-end">
+        <section>
+            <button onClick={() => setButtonPopUp(true)}>
+              <SearchIcon icon={<AiOutlineSearch />} />
+            </button>
+            <SearchPopUp Button={ButtonPopUp} setButton={setButtonPopUp} />
+          </section>
           <SocialMediaIcon
             icon={<AiFillGithub />}
             link={"https://github.com/ComputerSocietyVITC"}
