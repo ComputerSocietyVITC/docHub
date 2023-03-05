@@ -14,6 +14,7 @@ const Sidebar = (props: ISidebarProps): JSX.Element => {
           frontmatter {
             slug
             title
+            subtopic
           }
         }
       }
@@ -28,6 +29,7 @@ const Sidebar = (props: ISidebarProps): JSX.Element => {
           text={element?.frontmatter.title}
           active={true}
           slug={element?.frontmatter.slug}
+          subtopic={element.frontmatter.subtopic}
         />
       );
     } else {
@@ -37,6 +39,7 @@ const Sidebar = (props: ISidebarProps): JSX.Element => {
           text={element?.frontmatter.title}
           active={false}
           slug={element?.frontmatter.slug}
+          subtopic={element.frontmatter.subtopic}
         />
       );
     }

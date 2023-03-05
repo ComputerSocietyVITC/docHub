@@ -6,6 +6,7 @@ interface ItemProps {
   active: boolean;
   slug: string;
   element?: JSX.Element;
+  subtopic: string;
 }
 
 const Item = (props: ItemProps): JSX.Element => {
