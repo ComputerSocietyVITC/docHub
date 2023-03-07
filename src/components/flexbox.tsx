@@ -13,13 +13,13 @@ const Flexi = (): JSX.Element => {
             type="button"
           >
             <p className="my-[-2%] py-[-5%] text-center text-[5vw]">explore</p>
-            <p className="my-[-25%] text-center text-[5vw] opacity-70">
+            <p className="my-[-25%] text-center text-[5vw] text-blur_opacity-one">
               explore
             </p>
-            <p className="my-[-25%] text-center text-[5vw] opacity-40">
+            <p className="my-[-25%] text-center text-[5vw] text-blur_opacity-two">
               explore
             </p>
-            <p className="mt-[-10%] text-[5vw] opacity-20">explore</p>
+            <p className="mt-[-10%] text-[5vw] text-blur_opacity-three">explore</p>
           </button>
           <button
             onClick={() => navigate("/docs")}

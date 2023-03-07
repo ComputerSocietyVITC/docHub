@@ -40,6 +40,11 @@ module.exports = {
           green: "#00C180",
           logo: "#31CE9F",
         },
+        blur_opacity: {
+          one: 'rgba(255, 255, 255, 0.8)',
+          two: 'rgba(255, 255, 255, 0.6)',
+          three: 'rgba(255, 255, 255, 0.4)',
+        }
       },
       fontSize: {
      },
