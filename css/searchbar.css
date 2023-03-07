@@ -7,7 +7,7 @@
   background-color: rgb(82, 82, 82);
   font-size: 30px;
   height: 60px;
-  width: 500px;
+  width: 100%;
   border-radius: 25px;
   text-indent: 20px;
 }
@@ -29,7 +29,7 @@ input:focus {
 }
 
 .dataItem p {
-  margin-left: 5px;
+  margin-left: 20px;
   color: #31ce9f;
 }
 
@@ -41,7 +41,7 @@ input:focus {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,5 +50,18 @@ input:focus {
 .workspace {
   overflow: auto;
   height: 80%;
+  width: 70%;
 }
 
+.workspace::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.workspace::-webkit-scrollbar {
+  width: 20px;
+}
+.workspace::-webkit-scrollbar-thumb {
+  background-color: rgba(183, 244, 216, 0.5);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
