@@ -17,6 +17,12 @@ let useMDX = (content: any) => {
           id: idGenerator(node.children[0].value),
         };
       });
+      visit(tree, { type: "element", tagName: "a" }, (node) => {
+        node.properties = {
+          ...node.properties,
+          target: "_blank",
+        };
+      });
     };
   };
 

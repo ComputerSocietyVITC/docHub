@@ -4,12 +4,12 @@ import { BsArrowRight } from "react-icons/bs";
 const AboutBox = (): JSX.Element => {
   return (
     <>
-      <section className="bg-sideColors-1 rounded-2xl font-monty flex flex-col flex-auto justify-start tracking-tighter lg:text-8xl md:text-4xl sm:text-2xl m-2 py-4 w-fit">
-        <section className="text-white font-bold px-8">What's</section>
-        <section className="text-white font-bold px-8">this</section>
-        <section className="text-white font-bold px-8">about</section>
+      <section className="m-2 flex w-fit flex-auto flex-col justify-start rounded-2xl bg-sideColors-1 py-4 font-monty tracking-tighter sm:text-2xl md:text-4xl lg:text-8xl">
+        <section className="px-8 font-bold text-white">What's</section>
+        <section className="px-8 font-bold text-white">this</section>
+        <section className="px-8 font-bold text-white">about</section>
         <section className="flex justify-end">
-          <BsArrowRight className="lg:text-4xl md:text-3xl sm:text-2xl text-slate-300 -translate-x-4 hover:text-white hover:translate-x-0" />
+          <BsArrowRight className="-translate-x-4 text-slate-300 hover:translate-x-0 hover:text-white sm:text-2xl md:text-3xl lg:text-4xl" />
         </section>
       </section>
     </>
