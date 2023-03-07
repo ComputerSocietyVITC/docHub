@@ -34,7 +34,7 @@ input:focus {
 }
 
 
-.popup {
+.popup{
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@ input:focus {
 .workspace {
   overflow: auto;
   height: 80%;
-  width: 70%;
+  width: 50%;
 }
 
 .workspace::-webkit-scrollbar-track {

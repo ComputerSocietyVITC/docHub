@@ -57,10 +57,9 @@ code {
   font-size: small;
 }
 
-
-div#contents a{
+div#contents a {
   text-decoration-line: underline;
-  color: #31ce9f
+  color: #31ce9f;
 }
 
 div#contents a:hover {
@@ -70,8 +69,3 @@ div#contents a:hover {
 div#contents a:active {
   color: blue;
 }
-
-
-
-
-
