@@ -96,9 +96,7 @@ const SearchBar = (placeholder: any): JSX.Element => {
             );
           })}
 
-          <p className="text-lime-600">
-            Query matching Author names:{" "}
-          </p>
+          <p className="text-lime-600">Query matching Author names: </p>
           {filteredDataAuthor.map((values: any) => {
             return (
               <a className="dataItem" href={"/docs" + values.frontmatter.slug}>
