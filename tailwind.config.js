@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{html,js,jsx,ts,tsx, md. mdx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx, md. mdx}"],
   theme: {
     extend: {
       screens: {
@@ -46,9 +46,6 @@ module.exports = {
           three: 'rgba(255, 255, 255, 0.4)',
         }
       },
-      fontSize: {
-     },
-     spacing: {},
     },
   },
   plugins: [],
