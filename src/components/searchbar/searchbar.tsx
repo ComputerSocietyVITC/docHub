@@ -71,19 +71,21 @@ const SearchBar = (placeholder: any): JSX.Element => {
             onChange={handleFilter}
           />
         </section>
-        <section id="list" className="dataResult rounded-1xl">
-          <p className="text-lime-600">Matching Titles: </p>
-          {filteredDataTitles.map((values: any) => {
-            return (
-              <a className="dataItem" href={"/docs" + values.frontmatter.slug}>
-                <p>
-                  {values?.frontmatter.title} - {values.frontmatter.author}
-                </p>
-              </a>
-            );
-          })}
+        <section id="list" className="dataResult flex-col rounded-1xl">
 
-          <p className="text-lime-600">
+          {(filteredDataTitles.length!==0)?(<>
+            <p className="button flex-grow text-lime-600">Matching Titles: </p>
+            {filteredDataTitles.map((values: any) => {
+              return (
+                <a className="dataItem" href={"/docs" + values.frontmatter.slug}>
+                  <p>
+                    {values?.frontmatter.title} - {values.frontmatter.author}
+                  </p>
+                </a>
+              );
+            })}
+</>): ""}
+{(filteredDataBody.length!==0)?(<><p className="button text-lime-600">
             References of the query were found in this page:{" "}
           </p>
           {filteredDataBody.map((values: any) => {
@@ -95,8 +97,9 @@ const SearchBar = (placeholder: any): JSX.Element => {
               </a>
             );
           })}
+          </>): ""}
 
-          <p className="text-lime-600">Query matching Author names: </p>
+          {(filteredDataAuthor.length!==0) ?(<><p className="button text-lime-600">Query matching Author names: </p>
           {filteredDataAuthor.map((values: any) => {
             return (
               <a className="dataItem" href={"/docs" + values.frontmatter.slug}>
@@ -106,6 +109,7 @@ const SearchBar = (placeholder: any): JSX.Element => {
               </a>
             );
           })}
+          </>): ""}
         </section>
       </div>
     </>
