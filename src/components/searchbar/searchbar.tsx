@@ -63,35 +63,36 @@ const SearchBar = (placeholder: any): JSX.Element => {
   return (
     <>
       <div className="search">
-        <section className="searchInputs">
+        <section className="flex text-white">
           <input
+            className="focus:outline-black bg-gray-500 text-white text-lg h-16 w-full rounded-full px-5"
             type="text"
             placeholder={"  " + placeholder.text}
             value={wordEntered}
             onChange={handleFilter}
           />
         </section>
-        <section id="list" className="dataResult flex-col rounded-1xl">
+        <section id="list" className="flex flex-col rounded-1xl">
 
           {(filteredDataTitles.length!==0)?(<>
-            <p className="button flex-grow text-lime-600">Matching Titles: </p>
+            <p className="animate-pulse shadow-lg shadow-blue-500 bg-blue-950 text-white font-medium rounded-lg py-3 px-6 shadow-md transition duration-300 ease-in-out">Matching Titles: </p>
             {filteredDataTitles.map((values: any) => {
               return (
-                <a className="dataItem" href={"/docs" + values.frontmatter.slug}>
-                  <p>
+                <a className="w-full h-50 flex items-center text-black" href={"/docs" + values.frontmatter.slug}>
+                  <p className="ml-20 text-cyan-300">
                     {values?.frontmatter.title} - {values.frontmatter.author}
                   </p>
                 </a>
               );
             })}
 </>): ""}
-{(filteredDataBody.length!==0)?(<><p className="button text-lime-600">
+{(filteredDataBody.length!==0)?(<><p className="animate-pulse shadow-lg shadow-blue-500 bg-blue-950 text-white font-medium rounded-lg py-3 px-6 shadow-md transition duration-300 ease-in-out">
             References of the query were found in this page:{" "}
           </p>
           {filteredDataBody.map((values: any) => {
             return (
-              <a className="dataItem" href={"/docs" + values.frontmatter.slug}>
-                <p>
+              <a className="w-full h-50 flex items-center text-black" href={"/docs" + values.frontmatter.slug}>
+                <p className="ml-20 text-cyan-300">
                   {values?.frontmatter.title} - {values.frontmatter.author}
                 </p>
               </a>
@@ -99,11 +100,11 @@ const SearchBar = (placeholder: any): JSX.Element => {
           })}
           </>): ""}
 
-          {(filteredDataAuthor.length!==0) ?(<><p className="button text-lime-600">Query matching Author names: </p>
+          {(filteredDataAuthor.length!==0) ?(<><p className="animate-pulse shadow-lg shadow-blue-500 bg-blue-950 text-white font-medium rounded-lg py-3 px-6 shadow-md transition duration-300 ease-in-out">Query matching Author names: </p>
           {filteredDataAuthor.map((values: any) => {
             return (
-              <a className="dataItem" href={"/docs" + values.frontmatter.slug}>
-                <p>
+              <a className="w-full h-50 flex items-center text-black" href={"/docs" + values.frontmatter.slug}>
+                <p className="ml-20 text-cyan-300 hover:bg-emerald-950">
                   {values?.frontmatter.title} - {values.frontmatter.author}
                 </p>
               </a>
@@ -118,12 +119,12 @@ const SearchBar = (placeholder: any): JSX.Element => {
 
 const PopUp = (props: any): any => {
   return props.trigger ? (
-    <section className="popup">
-      <section className="workspace">
-        <button className="closeBtn" onClick={() => props.setTrigger(false)}>
+    <section className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-center">
+      <section className="fixed top-20 overflow-auto workspace">
+        <button onClick={() => props.setTrigger(false)}>
           <SearchIcon icon={<RiCloseFill />} />
         </button>
-        <section>{props.children}</section>
+        <section className="">{props.children}</section>
       </section>
     </section>
   ) : (

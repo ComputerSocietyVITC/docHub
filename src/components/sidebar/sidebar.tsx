@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Item from "./item";
-import "../../../css/sidebar.css";
 
 interface ISidebarProps {
   name: string;
@@ -35,7 +34,7 @@ const Sidebar = (props: ISidebarProps): JSX.Element => {
     return (
       <>
         <section className="flex m-4 justify-between sm:justify-center md:justify-around lg:justify-between">
-          <section className="button justify-center grow text-2xl font-bold" >
+          <section className="shadow-lg shadow-teal-700 bg-emerald-950 text-white font-medium rounded-lg py-3 px-6 shadow-md transition duration-300 ease-in-out justify-center grow text-2xl font-bold" >
             {element}
           </section>
         </section>
