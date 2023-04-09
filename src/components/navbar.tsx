@@ -1,39 +1,51 @@
 import * as React from "react";
 import "../../css/gradients.css";
-import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-import "../../css/gradients.css";
-import { SocialMediaIcon } from "./footer";
+import {
+  AiFillGithub,
+  AiOutlineInstagram,
+  AiOutlineSearch,
+} from "react-icons/ai";
+import { SocialMediaIcon, SearchIcon } from "./footer";
 import { StaticImage } from "gatsby-plugin-image";
+import SearchPopUp from "./searchbar/popup";
 
 const Navbar = (): JSX.Element => {
+  const [ButtonPopUp, setButtonPopUp] = React.useState(false);
   return (
     <>
-      <nav className="gradient-navbar flex h-12 items-center justify-between bg-gradient-to-l px-4">
-        <a href="/">
-          <section className="sm:hiden font-Plex font-bold uppercase text-white hover:underline">
-            IEEE Computer Society
-          </section>
-        </a>
-
-        <section className="hidden md:block lg:block">
-          <StaticImage
-            src={"../images/icon.svg"}
-            alt="Computer Society Logo"
-            className="h-12 w-12"
-          />
+      <nav className="h-18 grid grid-cols-3 items-center bg-darkshades-passive">
+        <section className="justify-self-start md:block lg:block">
+          <a href="/">
+            <StaticImage
+              src={"../images/icon.svg"}
+              alt="Computer Society Logo"
+              className="h-12 w-12"
+            />
+          </a>
         </section>
-        <section className="flex gap-2">
+        <section className="m-2 justify-self-center font-Plex font-black text-white">
+          <a className="text-4xl" href="/">
+            docHub
+          </a>
+        </section>
+        <section className="items-center flex justify-self-end">
+        <section>
+            <button onClick={() => setButtonPopUp(true)}>
+              <SearchIcon icon={<AiOutlineSearch />} />
+            </button>
+            <SearchPopUp Button={ButtonPopUp} setButton={setButtonPopUp} />
+          </section>
           <SocialMediaIcon
             icon={<AiFillGithub />}
             link={"https://github.com/ComputerSocietyVITC"}
           />
           <SocialMediaIcon
             icon={<AiOutlineInstagram />}
-            link={"https://github.com/comsoc.vitcc"}
+            link={"https://instagram.com/comsoc.vitcc"}
           />
         </section>
       </nav>
-      <section className="h-1 rounded-md bg-gradient-to-r from-primary to-[#c5da45]" />
+      <section className="h-0.5 rounded-md bg-gradient-to-r from-primary to-[#3C99DC]" />
     </>
   );
 };

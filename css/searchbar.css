@@ -1,0 +1,17 @@
+.workspace {
+  height: 80%;
+  width: 50%;
+}
+
+.workspace::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.workspace::-webkit-scrollbar {
+  width: 20px;
+}
+.workspace::-webkit-scrollbar-thumb {
+  background-color: rgba(28, 84, 136, 0.749);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
